@@ -1,6 +1,8 @@
 import React from 'react';
 import './DisplayCardNeo.css';
 
+// si c'est moche c'est à causde de ESLint et ses sauts de lignes dégueulasses
+
 function DisplayCardNeo({ object }) {
   return (
     <div className="DisplayCardNeo">
