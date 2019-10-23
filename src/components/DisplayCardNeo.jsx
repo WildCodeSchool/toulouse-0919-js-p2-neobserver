@@ -21,7 +21,7 @@ function DisplayCardNeo({ object }) {
           <p>
             {parseFloat(
               object.close_approach_data['0'].relative_velocity.kilometers_per_hour
-            ).toFixed(3)}{' '}
+            ).toFixed(0)}{' '}
             km/h
           </p>
           <p>
@@ -33,12 +33,14 @@ function DisplayCardNeo({ object }) {
             m
           </p>
           <p>
-            {parseFloat(object.close_approach_data['0'].miss_distance.kilometers).toFixed(3)} km
+            {parseFloat(object.close_approach_data['0'].miss_distance.kilometers).toFixed(0)} km
           </p>
           <p>{object.is_potentially_hazardous_asteroid ? 'YOU WILL DIE' : 'You are safe'}</p>
         </div>
       </div>
-      <a href={object.nasa_jpl_url}>More details on NASA JPL</a>
+      <a href={object.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
+        More details on NASA JPL
+      </a>
     </div>
   );
 }

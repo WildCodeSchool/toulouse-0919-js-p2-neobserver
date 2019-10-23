@@ -9,6 +9,10 @@ class CardNeo extends Component {
     this.getObject = this.getObject.bind(this);
   }
 
+  componentDidMount() {
+    this.getObject();
+  }
+
   getObject() {
     axios
       .get(
@@ -23,14 +27,7 @@ class CardNeo extends Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.state.object ? <DisplayCardNeo object={this.state.object} /> : null}
-        <button type="button" onClick={this.getObject}>
-          Get Object
-        </button>
-      </div>
-    );
+    return <div>{this.state.object ? <DisplayCardNeo object={this.state.object} /> : null}</div>;
   }
 }
 
