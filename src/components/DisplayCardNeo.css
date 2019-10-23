@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+p,
+a {
+  font-size: 16px;
+  margin: 0.8em;
+}
+
+.DisplayCardNeo {
+  display: flex;
+  flex-direction: column;
+  background-color: #373737;
+  color: white;
+  height: 250px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.card_texts {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15em;
+}
+
+.card_fetch_results {
+  text-align: center;
+}
+
+.card_title {
+  display: flex;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  background-color: #3b3b3b;
+}
+
+.card_title p {
+  margin: 0.4em;
+}
+
+a {
+  align-self: center;
+  color: #7c97db;
+  width: 12em;
+}

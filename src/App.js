@@ -1,10 +1,10 @@
 import React from 'react';
-import fetchNeo from './components/NeoCardapi';
+import CardNeo from './components/CardNeo';
 
 function App() {
   return (
     <div className="App">
-      <fetchNeo />
+      <CardNeo />
     </div>
   );
 }
