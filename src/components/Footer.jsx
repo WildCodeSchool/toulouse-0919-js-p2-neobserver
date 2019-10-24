@@ -10,7 +10,9 @@ function Footer() {
       <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
         <img className="logo-nasa" src={NASA} alt="" />
       </a>
-      <img className="logo-wild" src={WILD} alt="" />
+      <a href="https://www.wildcodeschool.com/" target="_blank" rel="noopener noreferrer">
+        <img className="logo-wild" src={WILD} alt="" />
+      </a>
       <div className="directors">
         <img className="logo-git" src={GIT} alt="" />
         <ul>
