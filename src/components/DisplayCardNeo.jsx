@@ -10,7 +10,7 @@ function DisplayCardNeo({ neo }) {
     <div className="DisplayCardNeo">
       <div className="card_title">
         <p>Name : </p>
-        <p>{neo.name}</p>
+        <p>{neo.name.substring(1, neo.name.length - 1)}</p>
       </div>
       <div className="card_texts">
         <div className="card_units">
