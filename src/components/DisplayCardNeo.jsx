@@ -1,14 +1,15 @@
 import React from 'react';
 import './DisplayCardNeo.css';
+import propTypes from 'prop-types';
 
 // si c'est moche c'est à causde de ESLint et ses sauts de lignes dégueulasses
 
-function DisplayCardNeo({ object }) {
+function DisplayCardNeo({ neo }) {
   return (
     <div className="DisplayCardNeo">
       <div className="card_title">
         <p>Name : </p>
-        <p>{object.name}</p>
+        <p>{neo.name}</p>
       </div>
       <div className="card_texts">
         <div className="card_units">
@@ -19,32 +20,37 @@ function DisplayCardNeo({ object }) {
           <p>Dangerousity : </p>
         </div>
         <div className="card_fetch_results">
-          <p>{object.close_approach_data['0'].close_approach_date_full}</p>
+          <p>{neo.close_approach_data['0'].close_approach_date_full}</p>
           <p>
-            {parseFloat(
-              object.close_approach_data['0'].relative_velocity.kilometers_per_hour
-            ).toFixed(0)}{' '}
+            {parseFloat(neo.close_approach_data['0'].relative_velocity.kilometers_per_hour).toFixed(
+              0
+            )}
             km/h
           </p>
           <p>
             {(
-              (object.estimated_diameter.meters.estimated_diameter_max +
-                object.estimated_diameter.meters.estimated_diameter_min) /
+              (neo.estimated_diameter.meters.estimated_diameter_max +
+                neo.estimated_diameter.meters.estimated_diameter_min) /
               2
-            ).toFixed(3)}{' '}
+            ).toFixed(3)}
             m
           </p>
           <p>
-            {parseFloat(object.close_approach_data['0'].miss_distance.kilometers).toFixed(0)} km
+            {parseFloat(neo.close_approach_data['0'].miss_distance.kilometers).toFixed(0)}
+            km
           </p>
-          <p>{object.is_potentially_hazardous_asteroid ? 'YOU WILL DIE' : 'You are safe'}</p>
+          <p>{neo.is_potentially_hazardous_asteroid ? 'YOU WILL DIE' : 'You are safe'}</p>
         </div>
       </div>
-      <a href={object.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
+      <a href={neo.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
         More details on NASA JPL
       </a>
     </div>
   );
 }
+
+DisplayCardNeo.propTypes = {
+  neo: propTypes.string.isRequired
+};
 
 export default DisplayCardNeo;

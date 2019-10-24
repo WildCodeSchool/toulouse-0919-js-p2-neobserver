@@ -5,7 +5,7 @@ import DisplayCardNeo from './DisplayCardNeo';
 class CardNeo extends Component {
   constructor(props) {
     super(props);
-    this.state = { object: null };
+    this.state = { neo: null };
     this.getObject = this.getObject.bind(this);
   }
 
@@ -21,13 +21,14 @@ class CardNeo extends Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
-          object: data.near_earth_objects['2019-10-22'][0]
+          neo: data.near_earth_objects['2019-10-22'][0]
         });
       });
   }
 
   render() {
-    return <div>{this.state.object ? <DisplayCardNeo object={this.state.object} /> : null}</div>;
+    const { neo } = this.state;
+    return <div>{neo ? <DisplayCardNeo neo={neo} /> : null}</div>;
   }
 }
 
