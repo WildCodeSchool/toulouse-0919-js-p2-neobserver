@@ -7,12 +7,14 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="container_footer">
-      <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
-        <img className="logo-nasa" src={NASA} alt="" />
-      </a>
-      <a href="https://www.wildcodeschool.com/" target="_blank" rel="noopener noreferrer">
-        <img className="logo-wild" src={WILD} alt="" />
-      </a>
+      <div className="logos_footer">
+        <a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">
+          <img className="logo-nasa" src={NASA} alt="" />
+        </a>
+        <a href="https://www.wildcodeschool.com/" target="_blank" rel="noopener noreferrer">
+          <img className="logo-wild" src={WILD} alt="" />
+        </a>
+      </div>
       <div className="directors">
         <img className="logo-git" src={GIT} alt="" />
         <ul>
