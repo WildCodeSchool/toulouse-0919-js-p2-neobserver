@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: white;
+  font-size: 12px;
+  padding: 0.2em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #7c97db;
+}
+
+.container_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+  background-color: #252525;
+}
+
+.logo-nasa,
+.logo-git {
+  height: 5em;
+}
+
+.logo-wild {
+  width: 8em;
+  height: 2.5em;
+}
+
+.directors {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  width: 40%;
+  background-color: #3b3b3b;
+}
