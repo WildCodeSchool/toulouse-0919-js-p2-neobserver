@@ -21,7 +21,7 @@ class CardNeo extends Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
-          neo: data.near_earth_objects['2019-10-22'][0]
+          neo: data.near_earth_objects['2019-10-22'][2]
         });
       });
   }
