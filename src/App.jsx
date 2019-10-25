@@ -1,6 +1,7 @@
 import React from 'react';
 import News from './components/News';
 import CardNeo from './components/CardNeo';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <CardNeo />
       <News />
       <Footer />
+    </div>
   );
 }
 
