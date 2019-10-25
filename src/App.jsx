@@ -1,12 +1,13 @@
 import React from 'react';
-// import './App.css';
 import News from './components/News';
+import CardNeo from './components/CardNeo';
 
 function App() {
   return (
     <div>
+      <CardNeo />
       <News />
-    </div>
+      <Footer />
   );
 }
 
