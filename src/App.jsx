@@ -1,10 +1,10 @@
 import React from 'react';
-import Footer from './components/Footer';
+import CardNeo from './components/CardNeo';
 
 function App() {
   return (
     <div className="App">
-      <Footer />
+      <CardNeo />
     </div>
   );
 }
