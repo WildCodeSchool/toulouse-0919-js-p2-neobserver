@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: white;
+  font-size: 12px;
+  padding: 0.2em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #7c97db;
+}
+
+.container_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 280px;
+  background-color: #252525;
+}
+
+.logo-nasa,
+.logo-git {
+  height: 5em;
+}
+
+.logo-wild {
+  width: 7em;
+  height: 2.6em;
+}
+
+.logos_footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45%;
+}
+
+.directors {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 160px;
+  width: 40%;
+  background-color: #3b3b3b;
+}
+
+@media screen and (max-width: 600px) {
+  li {
+    font-size: 14px;
+  }
+
+  .container_footer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 320px;
+  }
+
+  .logos_footer {
+    width: 100%;
+  }
+
+  .logo-nasa,
+  .logo-git {
+    height: 4.4em;
+  }
+
+  .directors {
+    width: 80%;
+  }
+}
