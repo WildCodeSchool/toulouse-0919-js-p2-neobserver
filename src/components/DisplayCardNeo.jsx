@@ -43,7 +43,7 @@ function DisplayCardNeo({ neo }) {
           <li>{neo.is_potentially_hazardous_asteroid ? 'YOU WILL DIE' : 'You are safe'}</li>
         </div>
       </div>
-      <a href={neo.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
+      <a className="JPLlink" href={neo.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
         More details on NASA JPL
       </a>
     </div>

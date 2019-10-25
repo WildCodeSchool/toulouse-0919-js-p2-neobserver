@@ -14,8 +14,14 @@ li,
 a {
   font-size: 16px;
   font-family: 'Roboto' sans-serif;
-  margin: 0.5em;
+  margin: 1em;
   text-decoration: none;
+}
+
+a {
+  align-self: center;
+  color: #7c97db;
+  width: 12em;
 }
 
 .DisplayCardNeo {
@@ -23,7 +29,7 @@ a {
   flex-direction: column;
   background-color: #373737;
   color: white;
-  height: 250px;
+  height: 300px;
   width: 500px;
   border-radius: 10px;
 }
@@ -52,8 +58,12 @@ a {
   margin: 0.4em;
 }
 
-a {
-  align-self: center;
-  color: #7c97db;
-  width: 12em;
+.JPLlink {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .DisplayCardNeo {
+    width: 100%;
+  }
 }
