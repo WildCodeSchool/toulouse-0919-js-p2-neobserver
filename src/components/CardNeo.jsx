@@ -16,12 +16,12 @@ class CardNeo extends Component {
   getObject() {
     axios
       .get(
-        'https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-10-21&end_date=2019-10-22&api_key=Jr2an55MZH7pzYVTcL1DvZazu0oEgJils4o4KdjI'
+        'https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-10-25&end_date=2019-10-25&api_key=Jr2an55MZH7pzYVTcL1DvZazu0oEgJils4o4KdjI'
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          neo: data.near_earth_objects['2019-10-22'][2]
+          neo: data.near_earth_objects['2019-10-25'][8]
         });
       });
   }

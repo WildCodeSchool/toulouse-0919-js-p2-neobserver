@@ -6,7 +6,7 @@ function DisplayNews({ News }) {
   return (
     <div className="contenerNews">
       <div className="DisplayNews">
-        <h4 clasName="titleNews"> Today's News : </h4>
+        <h5 clasName="titleNews"> Today's News : </h5>
         <p>{News.date}</p>
       </div>
       <div className="infosNews">

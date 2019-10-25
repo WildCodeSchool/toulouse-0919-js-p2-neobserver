@@ -17,7 +17,7 @@ function Footer() {
       </div>
       <div className="directors">
         <img className="logo-git" src={GIT} alt="" />
-        <ul>
+        <ul className="gitlink_footer">
           <li>
             <a href="https://github.com/AnnaMarandola" target="_blank" rel="noopener noreferrer">
               Anna Marandola

@@ -9,38 +9,42 @@ function DisplayCardNeo({ neo }) {
   return (
     <div className="DisplayCardNeo">
       <div className="card_title">
-        <p>Name : </p>
-        <p>{neo.name.substring(1, neo.name.length - 1)}</p>
+        <h5>Name : &nbsp;</h5>
+        <h5>{neo.name.substring(1, neo.name.length - 1)}</h5>
       </div>
       <div className="card_texts">
         <div className="card_units">
-          <li>Approach date : </li>
-          <li>Relative velocity : </li>
-          <li>Estimated diameter : </li>
-          <li>Distance from Earth : </li>
-          <li>Dangerousity : </li>
+          <ul>
+            <li>Approach date : </li>
+            <li>Relative velocity : </li>
+            <li>Estimated diameter : </li>
+            <li>Distance from Earth : </li>
+            <li>Dangerousity : </li>
+          </ul>
         </div>
         <div className="card_fetch_results">
-          <li>{neo.close_approach_data['0'].close_approach_date_full}</li>
-          <li>
-            {parseFloat(neo.close_approach_data['0'].relative_velocity.kilometers_per_hour).toFixed(
-              0
-            )}
-            &nbsp;km/h
-          </li>
-          <li>
-            {(
-              (neo.estimated_diameter.meters.estimated_diameter_max +
-                neo.estimated_diameter.meters.estimated_diameter_min) /
-              2
-            ).toFixed(3)}
-            &nbsp;m
-          </li>
-          <li>
-            {parseFloat(neo.close_approach_data['0'].miss_distance.kilometers).toFixed(0)}
-            &nbsp;km
-          </li>
-          <li>{neo.is_potentially_hazardous_asteroid ? 'YOU WILL DIE' : 'You are safe'}</li>
+          <ul>
+            <li>{neo.close_approach_data['0'].close_approach_date_full}</li>
+            <li>
+              {parseFloat(
+                neo.close_approach_data['0'].relative_velocity.kilometers_per_hour
+              ).toFixed(0)}
+              &nbsp;km/h
+            </li>
+            <li>
+              {(
+                (neo.estimated_diameter.meters.estimated_diameter_max +
+                  neo.estimated_diameter.meters.estimated_diameter_min) /
+                2
+              ).toFixed(3)}
+              &nbsp;m
+            </li>
+            <li>
+              {parseFloat(neo.close_approach_data['0'].miss_distance.kilometers).toFixed(0)}
+              &nbsp;km
+            </li>
+            <li>{neo.is_potentially_hazardous_asteroid ? 'You are safe' : 'YOU WILL DIE'}</li>
+          </ul>
         </div>
       </div>
       <a className="JPLlink" href={neo.nasa_jpl_url} target="_blank" rel="noopener noreferrer">
