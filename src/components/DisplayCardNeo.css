@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  font-size: 16px;
+}
+
+li,
+a {
+  font-size: 16px;
+  font-family: 'Roboto' sans-serif;
+  margin: 1em;
+  text-decoration: none;
+}
+
+a {
+  align-self: center;
+  color: #7c97db;
+  width: 12em;
+}
+
+.DisplayCardNeo {
+  display: flex;
+  flex-direction: column;
+  background-color: #373737;
+  color: white;
+  height: 300px;
+  width: 500px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.card_texts {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15em;
+}
+
+.card_fetch_results {
+  text-align: center;
+}
+
+.card_title {
+  display: flex;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  background-color: #3b3b3b;
+}
+
+.card_title p {
+  margin: 0.4em;
+}
+
+.JPLlink {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .DisplayCardNeo {
+    width: 100%;
+  }
+}
