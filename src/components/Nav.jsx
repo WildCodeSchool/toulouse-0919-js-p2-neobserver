@@ -7,7 +7,9 @@ function Nav() {
   return (
     <div className="containerNavbar">
       <nav className="nav">
-        <img className="Logo" src={Logo} alt="" />
+        <Link to="/" alt="link to Home">
+          <img className="Logo" src={Logo} alt="" />
+        </Link>
         <div className="NavButtons">
           <Link className="NavLinkText" to="/" alt="link to neos">
             NEOs
