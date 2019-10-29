@@ -9,12 +9,12 @@ function DisplayCardNeo({ neo }) {
   return (
     <div className="DisplayCardNeo">
       <div className="card_title">
-        <h5>Name : &nbsp;</h5>
-        <h5>{neo.name.substring(1, neo.name.length - 1)}</h5>
+        <h5>Neo of the day</h5>
       </div>
       <div className="card_texts">
         <div className="card_units">
           <ul>
+            <li>Name : &nbsp;</li>
             <li>Approach date : </li>
             <li>Relative velocity : </li>
             <li>Estimated diameter : </li>
@@ -24,6 +24,7 @@ function DisplayCardNeo({ neo }) {
         </div>
         <div className="card_fetch_results">
           <ul>
+            <li>{neo.name}</li>
             <li>{neo.close_approach_data['0'].close_approach_date_full}</li>
             <li>
               {parseFloat(
