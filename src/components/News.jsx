@@ -17,7 +17,7 @@ class News extends React.Component {
 
   getNews() {
     axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=eGfzJvpaKcTknvBgnNdkYu5RoPxpKSKVUjlqU8ag')
+      .get(this.props.link)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -27,10 +27,14 @@ class News extends React.Component {
   }
 
   render() {
-    console.log(this.state.news);
     return (
       <div className="app">{this.state.News ? <DisplayNews News={this.state.News} /> : null}</div>
     );
   }
 }
+
+News.defaultProps = {
+  link: 'https://api.nasa.gov/planetary/apod?api_key=eGfzJvpaKcTknvBgnNdkYu5RoPxpKSKVUjlqU8ag'
+};
+
 export default News;

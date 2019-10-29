@@ -1,7 +1,28 @@
-import React from 'react';
-import axios from 'axios';
-import NewsPAge from './NewsPage';
 import moment from 'moment';
+import React from 'react';
+import News from './News';
+
+function generateDate() {
+  // let date = this.state.date
+  const newArrayDate = [];
+  for (let i = 0; i < 6; i++) {
+    const previousDay = moment().subtract(i, 'days');
+    const formatDate = previousDay.format('YYYY-MM-DD');
+    newArrayDate.push(formatDate);
+  }
+  return newArrayDate;
+}
+
+// formater la date pour que ce soit au format Y/M/D
+// let date = moment().format()
+function generateLinkArray(newArrayDate) {
+  const arrlink = [];
+  for (let i = 0; i < newArrayDate.length; i++) {
+    const dateLink = `https://api.nasa.gov/planetary/apod?date=${newArrayDate[i]}&api_key=5PUzyQ2goY53k5caFiDoLmxGvYSoM9bxbnd7wgvG`;
+    arrlink.push(dateLink);
+  }
+  return arrlink;
+}
 
 class FormatDateApi extends React.Component {
   constructor(props) {
@@ -11,26 +32,15 @@ class FormatDateApi extends React.Component {
     };
   }
 
-  generateDate() {
-    // let date = this.state.date
-    let newArrayDate = [];
-    for (let i = 0; i < 6; i++) {
-      let previousDay = moment().subtract(i, 'days');
-      let formatDate = previousDay.format('YYYY-MM-DD');
-      newArrayDate.push(formatDate);
-    }
-    return newArrayDate;
-  }
-  //formater la date pour que ce soit au format Y/M/D
-  // let date = moment().format()
-
   render() {
-    const dates = this.generateDate();
-    dates.map();
-    console.log(this.state.date);
+    const dates = generateDate();
+    const linksResult = generateLinkArray(dates);
     return (
       <div className="FormatDateApi">
-        {this.state.date ? <NewsPAge date={this.state.date} /> : null}
+        {linksResult.map(link => (
+          <News link={link} />
+        ))}
+        {/*this.state.date ? <NewsPage date={this.state.date} /> : null*/}
       </div>
     );
   }
