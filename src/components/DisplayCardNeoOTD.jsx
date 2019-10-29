@@ -1,13 +1,13 @@
 import React from 'react';
-import './DisplayCardNeo.css';
+import './DisplayCardNeoOTD.css';
 import propTypes from 'prop-types';
 
 // si c'est moche c'est à causde de ESLint et ses sauts de lignes dégueulasses
 // usage d'espaces inséccables pour espacer les unités du résultat ex: 300&nbsp;km
 
-function DisplayCardNeo({ neo }) {
+function DisplayCardNeoOTD({ neo }) {
   return (
-    <div className="DisplayCardNeo">
+    <div className="DisplayCardNeoOTD">
       <div className="card_title">
         <h5>Neo of the day</h5>
       </div>
@@ -44,7 +44,9 @@ function DisplayCardNeo({ neo }) {
               {parseFloat(neo.close_approach_data['0'].miss_distance.kilometers).toFixed(0)}
               &nbsp;km
             </li>
-            <li>{neo.is_potentially_hazardous_asteroid ? 'You are safe' : 'YOU WILL DIE'}</li>
+            <li>
+              {neo.is_potentially_hazardous_asteroid ? 'YOU WILL DIE (maybe)' : 'You are safe'}
+            </li>
           </ul>
         </div>
       </div>
@@ -55,8 +57,8 @@ function DisplayCardNeo({ neo }) {
   );
 }
 
-DisplayCardNeo.propTypes = {
+DisplayCardNeoOTD.propTypes = {
   neo: propTypes.string.isRequired
 };
 
-export default DisplayCardNeo;
+export default DisplayCardNeoOTD;

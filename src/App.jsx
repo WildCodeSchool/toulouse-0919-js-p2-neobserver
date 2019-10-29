@@ -1,12 +1,12 @@
 import React from 'react';
 import News from './components/News';
-import CardNeo from './components/CardNeo';
+import CardNeoOTD from './components/CardNeoOTD';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
-      <CardNeo />
+      <CardNeoOTD />
       <News />
       <Footer />
     </div>

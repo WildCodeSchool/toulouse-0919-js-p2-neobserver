@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DisplayCardNeo from './DisplayCardNeo';
+import DisplayCardNeoOTD from './DisplayCardNeoOTD';
 
-class CardNeo extends Component {
+class CardNeoOTD extends Component {
   constructor(props) {
     super(props);
     this.state = { neo: null };
@@ -30,8 +30,8 @@ class CardNeo extends Component {
 
   render() {
     const { neo } = this.state;
-    return <div>{neo ? <DisplayCardNeo neo={neo} /> : null}</div>;
+    return <div>{neo ? <DisplayCardNeoOTD neo={neo} /> : null}</div>;
   }
 }
 
-export default CardNeo;
+export default CardNeoOTD;
