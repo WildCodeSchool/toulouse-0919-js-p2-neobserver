@@ -1,16 +1,23 @@
 import React from 'react';
-import News from './components/News';
-import CardNeo from './components/CardNeo';
 import Footer from './components/Footer';
+import {Switch, Route} from "react-router-dom";
 
-function App() {
-  return (
+class App extends React.Component{
+
+  render(){
+    return (
     <div>
-      <CardNeo />
-      <News />
+      <Switch>
+        <Route exact-path="/" component={Home}/>
+        <Route exact-path="/" component={}/>
+        <Route exact-path="/" component={}/>
+        <Route exact-path="/" component={}/>
+        <Route exact-path="/" component={}/>
+      </Switch>
       <Footer />
     </div>
-  );
+    )
+}
 }
 
 export default App;
