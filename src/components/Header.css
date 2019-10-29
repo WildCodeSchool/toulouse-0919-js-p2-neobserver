@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .Header {
   height: 51.08vw;
   display: flex;
@@ -5,6 +7,8 @@
 }
 
 .NEOBSERVER {
+  font-family: 'Roboto' sans-serif;
+  font-size: 4.5em;
   color: white;
   height: 5vw;
   align-self: center;
