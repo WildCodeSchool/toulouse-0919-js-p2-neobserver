@@ -1,10 +1,11 @@
 .Header {
-  height: 80vw;
+  height: 51.08vw;
   display: flex;
   justify-content: center;
 }
 
 .NEOBSERVER {
+  color: white;
   height: 5vw;
   align-self: center;
 }
