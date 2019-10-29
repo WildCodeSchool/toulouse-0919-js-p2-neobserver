@@ -1,5 +1,5 @@
 import React from 'react';
-import './News.css';
+import './DisplayNews.css';
 import propTypes from 'prop-types';
 
 function DisplayNews({ News }) {
@@ -10,15 +10,10 @@ function DisplayNews({ News }) {
         <p>{News.date}</p>
       </div>
       <div className="infosNews">
-        <div className="columnNews">
+        <div>
           <img className="NewsImage" src={News.url} alt={News.copyright} />
           <quote className="nameNews">{News.title}</quote>
-        </div>
-        <div id="scrollText" className="scrollNews">
-          <div className="overflow">
-            {' '}
-            <p className="NewsText">{News.explanation}</p>
-          </div>
+          <p className="NewsText">{News.explanation}</p>
         </div>
       </div>
     </div>

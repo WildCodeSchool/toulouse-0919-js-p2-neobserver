@@ -13,7 +13,7 @@ p {
 .contenerNews {
   margin: 8px 0 8px 200px;
   width: 500px;
-  height: 320px;
+  height: auto;
   background-color: #3b3b3b;
   border-radius: 10px;
   display: flex;
@@ -48,37 +48,7 @@ p {
   width: 250px;
   height: 200px;
   border-radius: 10px;
-  float: left;
-}
-
-.columnNews {
-  padding-left: 10px;
-  padding-top: 25px;
-}
-
-.scrollNews {
-  height: 270px;
-  overflow-y: auto;
-}
-
-.overflow {
-  min-height: 45px;
-}
-
-#scrollText::-webkit-scrollbar-track {
-  background: #5b5b5b;
-  border-radius: 10px;
-}
-
-#scrollText::-webkit-scrollbar {
-  width: 10px;
-  background: #4b4b4b;
-}
-
-#scrollText::-webkit-scrollbar-thumb {
-  border: 1px white solid;
-  background: #4b4b4b;
-  border-radius: 10px;
+  float: right;
 }
 
 .NewsTexts {
@@ -92,4 +62,5 @@ p {
   font-style: italic;
   font-size: 14px;
   padding-left: 10px;
+  float: right;
 }

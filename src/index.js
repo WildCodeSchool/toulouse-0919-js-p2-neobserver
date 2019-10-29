@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -10,7 +9,6 @@ ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  // eslint-disable-next-line no-undef
   document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change
