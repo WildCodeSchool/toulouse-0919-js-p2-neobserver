@@ -1,0 +1,10 @@
+.Header {
+  height: 80vw;
+  display: flex;
+  justify-content: center;
+}
+
+.NEOBSERVER {
+  height: 5vw;
+  align-self: center;
+}
