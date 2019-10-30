@@ -40,12 +40,9 @@ class FormatDateApi extends React.Component {
         {linksResult.map(link => (
           <News link={link} />
         ))}
-        {/*this.state.date ? <NewsPage date={this.state.date} /> : null*/}
       </div>
     );
   }
 }
 
 export default FormatDateApi;
-
-// url : https://api.nasa.gov/planetary/apod?date=2019-10-10&api_key=DEMO_KEY
