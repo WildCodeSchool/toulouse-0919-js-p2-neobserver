@@ -11,8 +11,8 @@ p {
 }
 
 .contenerNews {
-  margin: 8px 0 8px 200px;
-  width: 500px;
+  margin: 10px;
+  width: 45%;
   height: auto;
   background-color: #3b3b3b;
   border-radius: 10px;
@@ -45,10 +45,11 @@ p {
 }
 
 .NewsImage {
-  width: 250px;
-  height: 200px;
+  width: auto;
+  height: 30%;
+  border: 2px gray solid;
   border-radius: 10px;
-  float: right;
+  justify-content: flex-end;
 }
 
 .NewsTexts {
