@@ -1,8 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import './Header.css';
-import wallpaper from '../assets/wallpaper.jpg';
-import 'typeface-roboto';
+import wallpaper from '../assets/planetTest.png';
 
 function Header() {
   return (
