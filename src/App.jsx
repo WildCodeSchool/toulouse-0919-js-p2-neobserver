@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './components/Home';
+import AllNews from './components/AllNews';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -12,10 +13,10 @@ class App extends React.Component {
       <div>
         <Nav />
         <Switch>
-          <Route path="/" component={Home} />
-          {/* <Route path="/" component={Neos} />
-          <Route path="/" component={News} />
-          <Route path="/" component={Glossary} /> */}
+          <Route exact path="/" component={Home} />
+          {/* <Route path="/" component={Neos} /> */}
+          <Route path="/AllNews" component={AllNews} />
+          {/* <Route path="/" component={Glossary} /> */}
         </Switch>
         <Footer />
       </div>

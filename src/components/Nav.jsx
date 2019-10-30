@@ -14,7 +14,7 @@ function Nav() {
           <Link className="NavLinkText" to="/" alt="link to neos">
             NEOs
           </Link>
-          <Link className="NavLinkText" to="/" alt="link to News">
+          <Link className="NavLinkText" to="/AllNews" alt="link to News">
             News
           </Link>
           <Link className="NavLinkText" to="/" alt="link to glossary">
