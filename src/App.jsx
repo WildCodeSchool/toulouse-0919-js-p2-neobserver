@@ -1,17 +1,13 @@
 import React from 'react';
-import News from './components/News';
-import Header from './components/Header';
-import CardNeo from './components/CardNeo';
-import Footer from './components/Footer';
+import './App.css';
+import FormatDateApi from './components/FormatDateApi';
 
 function App() {
   return (
     <div>
-      <Header />
-      <CardNeo />
-      <News />
-      <Footer />
+      <FormatDateApi />
     </div>
+    // <div>{dispPage && <NewsPage />}</div>
   );
 }
 
