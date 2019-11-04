@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
 
+function getEndDate(startDate) {
+  const copy = new Date(startDate);
+  copy.setDate(copy.getDate() + 7);
+  return copy.toISOString().substring(0, 10);
+}
+
 class Datepicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrDate: []
+      arrDate: null
     };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ arrDate: event.target.value });
+    this.setState({ arrDate: [event.target.value, getEndDate(event.target.value)] });
   }
 
-  getDate() {
-    let userDate = date.now();
-
-    let date = new Date(userDate);
-    let newDate = new Date(date);
-
-    newDate.setDate(newDate.getDate() + 6);
-
-    let y = newDate.getFullYear();
-    let mm = newDate.getMonth() + 1;
-    let dd = newDate.getDate();
-
-    let formattedDate = `${y}-${mm}-${dd}`;
-    // envoyer cette value dans un element
-  }
   render() {
+    const { arrDate } = this.state;
     return (
       <div>
-        <input
-          className="starDate"
-          type="date"
-          id="start"
-          name="trip-start"
-          value="{this.arrDate}"
-          onChange={this.handleChange}
-        />
+        <input type="date" value={arrDate ? arrDate[0] : ''} onChange={this.handleChange} />
+        <input type="date" value={arrDate ? arrDate[1] : ''} disabled />
       </div>
     );
   }
