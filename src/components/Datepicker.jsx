@@ -1,26 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Datepicker() {
-  const [startDate, setStartDate] = useState(new Date('2014/02/08'));
-  const [endDate, setEndDate] = useState(new Date('2014/02/10'));
-  return (
-    <>
-      <DatePicker
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={date => setEndDate(date)}
-        selectsEnd
-        endDate={endDate}
-        minDate={startDate}
-      />
-    </>
-  );
+function getDate() {
+  // let userDate = value d'un element
+
+  let date = new Date(userDate);
+  let newDate = new Date(date);
+
+  newDate.setDate(newDate.getDate() + 6);
+
+  let y = newDate.getFullYear();
+  let mm = newDate.getMonth() + 1;
+  let dd = newDate.getDate();
+
+  let formattedDate = `${y}-${mm}-${dd}`;
+  // envoyer cette value dans un element
 }
-
-export default Datepicker;
