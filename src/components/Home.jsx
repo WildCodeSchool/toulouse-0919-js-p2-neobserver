@@ -1,5 +1,5 @@
 import React from 'react';
-import CardNeo from './CardNeo';
+import CardNeoOTD from './CardNeoOTD';
 import News from './News';
 import Header from './Header';
 
@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <CardNeo />
+      <CardNeoOTD />
       <News />
     </div>
   );
