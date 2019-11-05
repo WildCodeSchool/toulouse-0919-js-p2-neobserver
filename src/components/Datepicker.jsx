@@ -10,21 +10,22 @@ class Datepicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrDate: null
+      arrayDate: null,
+      arrayResults: null
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ arrDate: [event.target.value, getEndDate(event.target.value)] });
+    this.setState({ arrayDate: [event.target.value, getEndDate(event.target.value)] });
   }
 
   render() {
-    const { arrDate } = this.state;
+    const { arrayDate } = this.state;
     return (
       <div>
-        <input type="date" value={arrDate ? arrDate[0] : ''} onChange={this.handleChange} />
-        <input type="date" value={arrDate ? arrDate[1] : ''} disabled />
+        <input type="date" value={arrayDate ? arrayDate[0] : ''} onChange={this.handleChange} />
+        <input type="date" value={arrayDate ? arrayDate[1] : ''} disabled />
       </div>
     );
   }
