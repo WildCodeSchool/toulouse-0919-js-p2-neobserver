@@ -14,7 +14,7 @@ function DisplayCardNeoOTD({ neo }) {
       <div className="card_texts">
         <div className="card_units">
           <ul>
-            <li>Name : </li>
+            <li>Name : &nbsp;</li>
             <li>Approach date : </li>
             <li>Relative velocity : </li>
             <li>Estimated diameter : </li>
