@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import News from './components/News';
-import CardNeoOTD from './components/CardNeoOTD';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './components/Home';
