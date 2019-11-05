@@ -8,7 +8,7 @@ class CardNeoOTD extends Component {
     this.state = { neo: null };
     this.today = new Date();
     this.date = `${this.today.getFullYear()}-${
-      this.today.getMonth() < 10 ? `0${this.today.getMonth()}${1}` : this.today.getMonth() + 1
+      this.today.getMonth() < 10 ? `0${this.today.getMonth() + 1}` : this.today.getMonth() + 1
     }-${this.today.getDate() < 10 ? `0${this.today.getDate()}` : this.today.getDate()}`;
     this.getObject = this.getObject.bind(this);
   }
