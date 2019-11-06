@@ -3,10 +3,15 @@ import axios from 'axios';
 import DisplayCardNeoOTD from './DisplayCardNeoOTD';
 
 function getEndDate(startDate) {
+  let arrayConverted = [];
   const copy = new Date(startDate);
-  copy.setDate(copy.getDate() + 7);
-  return copy.toISOString().substring(0, 10);
+  for (let i = 0; i < 7; i++) {
+    copy.setDate(copy.getDate() + 1);
+    arrayConverted.push(copy.toISOString().substring(0, 10));
+  }
+  return arrayConverted;
 }
+console.log(getEndDate('2019-01-01'));
 
 class Datepicker extends Component {
   constructor(props) {
@@ -16,19 +21,19 @@ class Datepicker extends Component {
       arrayResults: null
     };
     this.handleChange = this.handleChange.bind(this);
-    this.getNeosByWeekRange = this.getNeosByWeekRange.bind(this);
+    this.getNeos = this.getNeos.bind(this);
   }
 
   componentDidUpdate() {
-    this.getNeosByWeekRange();
+    this.getNeos();
   }
 
-  getNeosByWeekRange() {
+  getNeos() {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
           this.state.arrayDate[1]
-        }&api_key=Jr2an55MZH7pzYVTcL1DvZazu0oEgJils4o4KdjI`
+        }&api_key=w5E5Q3iswF021K4U1EXRhiuJRadRrkNXEg95144y`
       )
       .then(response => response.data)
       .then(data => {
@@ -39,7 +44,7 @@ class Datepicker extends Component {
   }
 
   handleChange(event) {
-    this.setState({ arrayDate: [event.target.value, getEndDate(event.target.value)] });
+    this.setState({ arrayDate: getEndDate(event.target.value) });
   }
 
   render() {
