@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DisplayCardNeoOTD from './DisplayCardNeoOTD';
 
-function getEndDate(startDate) {
+function getWeekDates(startDate) {
   let arrayConverted = [startDate];
   const copy = new Date(startDate);
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     copy.setDate(copy.getDate() + 1);
     arrayConverted.push(copy.toISOString().substring(0, 10));
   }
   return arrayConverted;
 }
-console.log(getEndDate('2019-01-01'));
 
 class Datepicker extends Component {
   constructor(props) {
@@ -32,8 +31,8 @@ class Datepicker extends Component {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[1]
-        }&api_key=w5E5Q3iswF021K4U1EXRhiuJRadRrkNXEg95144y`
+          this.state.arrayDate[0]
+        }&api_key=ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`
       )
       .then(response => response.data)
       .then(data => {
@@ -44,7 +43,7 @@ class Datepicker extends Component {
   }
 
   handleChange(event) {
-    this.setState({ arrayDate: getEndDate(event.target.value) });
+    this.setState({ arrayDate: getWeekDates(event.target.value) });
   }
 
   render() {
