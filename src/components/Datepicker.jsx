@@ -3,9 +3,9 @@ import axios from 'axios';
 import DisplayCardNeoOTD from './DisplayCardNeoOTD';
 
 function getEndDate(startDate) {
-  let arrayConverted = [];
+  let arrayConverted = [startDate];
   const copy = new Date(startDate);
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 6; i++) {
     copy.setDate(copy.getDate() + 1);
     arrayConverted.push(copy.toISOString().substring(0, 10));
   }
