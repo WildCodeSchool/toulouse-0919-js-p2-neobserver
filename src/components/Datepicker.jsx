@@ -16,14 +16,14 @@ class Datepicker extends Component {
       arrayResults: null
     };
     this.handleChange = this.handleChange.bind(this);
-    this.getNeosByWeekRange = this.getNeosByWeekRange.bind(this);
+    this.getNeos = this.getNeos.bind(this);
   }
 
   componentDidUpdate() {
-    this.getNeosByWeekRange();
+    this.getNeos();
   }
 
-  getNeosByWeekRange() {
+  getNeos() {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
