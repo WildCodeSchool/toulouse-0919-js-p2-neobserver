@@ -51,7 +51,7 @@ class Datepicker extends Component {
     return (
       <div>
         <input type="date" value={arrayDate ? arrayDate[0] : ''} onChange={this.handleChange} />
-        <input type="date" value={arrayDate ? arrayDate[1] : ''} disabled />
+        <input type="date" value={arrayDate ? arrayDate[7] : ''} disabled />
         {this.state.arrayResults && <DisplayCardNeoOTD neo={this.state.arrayResults[0]} />}
       </div>
     );
