@@ -35,4 +35,5 @@ class CardNeoOTD extends Component {
     return <div>{neo ? <DisplayCardNeoOTD neo={neo} /> : null}</div>;
   }
 }
+
 export default CardNeoOTD;
