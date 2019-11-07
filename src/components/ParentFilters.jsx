@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
+import NameFilter from './NameFilter';
+import arrNeo from './jason';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -11,21 +13,28 @@ function getWeekDates(startDate) {
   }
   return arrayConverted;
 }
-
 class ParentFilters extends Component {
   constructor(props) {
     super(props);
     this.state = {
       arrayDate: null,
-      arrayResults: null
+      arrayResults: null,
+      searchedName: '(2019 PA)',
+      foundNeo: null
     };
+
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
     this.createArrayDate = this.createArrayDate.bind(this);
+    this.handleNeoByName = this.handleNeoByName.bind(this);
+    this.findNeoByName = this.findNeoByName.bind(this);
   }
 
   componentDidUpdate() {
-    this.getNeosByWeek();
+    if (this.state.arrayDate !== null) {
+      this.getNeosByWeek();
+    }
   }
+  // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
     axios
@@ -46,12 +55,32 @@ class ParentFilters extends Component {
     this.setState({ arrayDate: getWeekDates(event.target.value) });
   }
 
+  // elements concernant les filtres par nom:
+
+  handleNeoByName(event) {
+    this.setState({ searchedName: event.target.value });
+  }
+
+  findNeoByName(neoName) {
+    const resultNeo = arrNeo.find(neo => {
+      return neo.name === neoName;
+    });
+    this.setState({ foundNeo: resultNeo });
+  }
+
   render() {
     return (
       <div>
         <Datepicker
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
+        />
+        <NameFilter
+          handleNeoByName={this.handleNeoByName}
+          handleSearchByName={this.handleSearchByName}
+          findNeoByName={this.findNeoByName}
+          searchedInputName={this.state.searchedName}
+          foundNeo={this.state.foundNeo}
         />
       </div>
     );
