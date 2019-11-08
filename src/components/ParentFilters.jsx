@@ -20,7 +20,7 @@ class ParentFilters extends Component {
     this.state = {
       arrayDate: null,
       arrayResults: null,
-      searchedName: '(2019 PA)',
+      searchedName: '',
       foundNeo: null
     };
 
