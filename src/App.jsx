@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import AllNews from './components/AllNews';
 import Datepicker from './components/Datepicker';
+import ParentFilters from './components/ParentFilters';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -13,7 +14,7 @@ class App extends React.Component {
     return (
       <div>
         <Nav />
-        <Datepicker />
+        <ParentFilters />
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route path="/" component={Neos} /> */}
