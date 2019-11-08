@@ -6,13 +6,13 @@ function DisplayNews({ News }) {
   return (
     <div className="contenerNews">
       <div className="DisplayNews">
-        <h5 clasName="titleNews"> Today's News : </h5>
+        <h5 className="titleNews"> Today's News : </h5>
         <p>{News.date}</p>
       </div>
       <div className="infosNews">
         <div>
           <img className="NewsImage" src={News.url} alt={News.copyright} />
-          <quote className="nameNews">{News.title}</quote>
+          <p className="nameNews">{News.title}</p>
           <p className="NewsText">{News.explanation}</p>
         </div>
       </div>
