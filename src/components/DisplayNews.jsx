@@ -11,8 +11,8 @@ function DisplayNews({ News }) {
       </div>
       <div className="infosNews">
         <div>
-          <img className="NewsImage" src={News.url} alt={News.copyright} />
           <p className="nameNews">{News.title}</p>
+          <img className="NewsImage" src={News.url} alt={News.copyright} />
           <p className="NewsText">{News.explanation}</p>
         </div>
       </div>

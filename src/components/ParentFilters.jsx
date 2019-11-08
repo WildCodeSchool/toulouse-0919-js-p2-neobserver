@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
+// import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
 
 function getWeekDates(startDate) {
@@ -20,13 +21,15 @@ class ParentFilters extends Component {
       arrayDate: null,
       arrayResults: null,
       searchedName: '(2019 PA)',
-      foundNeo: null
+      foundNeo: null,
+      foundSmalls: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
     this.createArrayDate = this.createArrayDate.bind(this);
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
+    // this.findSmallNeo = this.findSmallNeo.bind(this);
   }
 
   componentDidUpdate() {
@@ -68,20 +71,34 @@ class ParentFilters extends Component {
     this.setState({ foundNeo: resultNeo });
   }
 
+  // elements concernant la recherche par taille:
+
+  // findSmallNeo(arrNeo) {
+  //   const smallNeos = arrNeo.filter(neo => {
+  //     return neo.estimated_diameter.meters.estimated_diameter_min < 5;
+  //   });
+  //   this.setState({ foundSmalls: smallNeos });
+  // }
+
   render() {
     return (
-      <div>
+      <div className="AllFilter">
         <Datepicker
+          className="DateFilter"
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
         />
         <NameFilter
+          className="NameFilter"
           handleNeoByName={this.handleNeoByName}
           handleSearchByName={this.handleSearchByName}
           findNeoByName={this.findNeoByName}
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
+        {/* <SizeFilter />
+        findSmallNeo={this.state.foundSmalls}
+        foundSmalls={this.state.foundNeo} */}
       </div>
     );
   }
