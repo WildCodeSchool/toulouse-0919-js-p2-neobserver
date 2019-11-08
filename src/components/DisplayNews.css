@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 * {
   padding: 0;
   margin: 0;
@@ -11,8 +10,8 @@ p {
 }
 
 .contenerNews {
-  margin: 10px;
-  width: 45%;
+  margin: 8px 0 8px 200px;
+  width: 800px;
   height: auto;
   background-color: #3b3b3b;
   border-radius: 10px;
@@ -45,11 +44,41 @@ p {
 }
 
 .NewsImage {
-  width: auto;
-  height: 30%;
-  border: 2px gray solid;
+  width: 300px;
+  height: 200px;
+  padding: 5px;
   border-radius: 10px;
-  justify-content: flex-end;
+  float: left;
+}
+
+.columnNews {
+  padding-left: 10px;
+  padding-top: 25px;
+}
+
+.scrollNews {
+  height: 270px;
+  overflow-y: auto;
+}
+
+.overflow {
+  min-height: 45px;
+}
+
+#scrollText::-webkit-scrollbar-track {
+  background: #5b5b5b;
+  border-radius: 10px;
+}
+
+#scrollText::-webkit-scrollbar {
+  width: 10px;
+  background: #4b4b4b;
+}
+
+#scrollText::-webkit-scrollbar-thumb {
+  border: 1px white solid;
+  background: #4b4b4b;
+  border-radius: 10px;
 }
 
 .NewsTexts {
@@ -63,5 +92,4 @@ p {
   font-style: italic;
   font-size: 14px;
   padding-left: 10px;
-  float: right;
 }
