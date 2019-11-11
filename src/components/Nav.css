@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 25px;
+  padding-left: 25px;
 }
 
 /*.NavLink :first-of-type {
