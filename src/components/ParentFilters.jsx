@@ -4,6 +4,7 @@ import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import arrNeo from './jason';
 import DisplayCardNeo from './DisplayCardNeo';
+import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -54,7 +55,7 @@ class ParentFilters extends Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
+          arrayResults: data.near_earth_objects
         });
       });
   }
@@ -98,11 +99,7 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
-        <div>
-          {this.state.arrayResults &&
-            this.state.arrayResults.map(infoNeo => <DisplayCardNeo infoNeo={infoNeo} />)}
-        </div>
-        {/* <div>{this.displayNeo()}</div> */}
+        <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
       </div>
     );
   }
