@@ -22,7 +22,9 @@ class ParentFilters extends Component {
       arrayResults: null,
       searchedName: '(2019 PA)',
       foundNeo: null,
-      foundSmalls: null
+      foundSmalls: null,
+      foundMediums: null,
+      foundBigs: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
@@ -30,12 +32,14 @@ class ParentFilters extends Component {
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
     this.getSmallNeos = this.getSmallNeos.bind(this);
+    this.getMediumNeos = this.getMediumNeos.bind(this);
+    this.getBigNeos = this.getBigNeos.bind(this);
   }
 
   componentDidUpdate() {
     if (this.state.arrayDate !== null) {
       this.getNeosByWeek();
-      this.getSmallNeos();
+      // this.getSmallNeos();
     }
   }
   // elements concernant le filtre date et creation du tableau global
@@ -81,6 +85,23 @@ class ParentFilters extends Component {
     this.setState({ foundSmalls: resultSmalls });
   }
 
+  getMediumNeos() {
+    const resultMediums = arrNeo.filter(infoNeo => {
+      return (
+        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &
+        (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
+      );
+    });
+    this.setState({ foundMediums: resultMediums });
+  }
+
+  getBigNeos() {
+    const resultBigs = arrNeo.filter(infoNeo => {
+      return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
+    });
+    this.setState({ foundBigs: resultBigs });
+  }
+
   render() {
     return (
       <div className="AllFilter">
@@ -101,6 +122,11 @@ class ParentFilters extends Component {
           className="SmallFilter"
           getSmallNeos={this.getSmallNeos}
           foundSmalls={this.state.foundSmalls}
+          infoNeo={this.state.infoNeo}
+          getMediumNeos={this.getMediumNeos}
+          foundMediums={this.state.foundMediums}
+          getBigNeos={this.getBigNeos}
+          foundBigs={this.state.foundBigs}
         />
       </div>
     );
