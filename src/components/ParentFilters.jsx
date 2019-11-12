@@ -48,7 +48,7 @@ class ParentFilters extends Component {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[0]
+          this.state.arrayDate[6]
         }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
       )
       .then(response => response.data)
@@ -100,9 +100,7 @@ class ParentFilters extends Component {
         />
         <div>
           {this.state.arrayResults &&
-            this.state.arrayResults.map(infoNeo => (
-              <DisplayCardNeo infoNeo={this.state.arrayResults[0]} />
-            ))}
+            this.state.arrayResults.map(infoNeo => <DisplayCardNeo infoNeo={infoNeo} />)}
         </div>
         {/* <div>{this.displayNeo()}</div> */}
       </div>
