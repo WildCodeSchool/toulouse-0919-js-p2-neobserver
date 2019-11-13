@@ -4,6 +4,7 @@ import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
+import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -25,7 +26,7 @@ class ParentFilters extends Component {
       foundNeo: null,
       foundSmalls: null,
       foundMediums: null,
-      foundBigs: null
+      foundBigs: null,
       searchedName: '',
       foundNeo: null
     };
@@ -45,8 +46,6 @@ class ParentFilters extends Component {
       // this.getSmallNeos();
     }
   }
-  }
-
 
   // elements concernant le filtre date et creation du tableau global
 
