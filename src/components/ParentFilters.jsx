@@ -3,6 +3,7 @@ import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import SizeFilter from './SizeFilter';
+import DangerFilter from './DangerFilter';
 import arrNeo from './jason';
 import ListNeo from './ListNeo';
 
@@ -22,12 +23,13 @@ class ParentFilters extends Component {
     this.state = {
       arrayDate: null,
       arrayResults: null,
-      searchedName: '(2019 PA)',
+      searchedName: '',
       foundNeo: null,
       foundSmalls: null,
       foundMediums: null,
       foundBigs: null,
-      searchedName: '',
+      foundDangerous: null,
+      foundSafe: null,
       foundNeo: null
     };
 
@@ -38,6 +40,8 @@ class ParentFilters extends Component {
     this.getSmallNeos = this.getSmallNeos.bind(this);
     this.getMediumNeos = this.getMediumNeos.bind(this);
     this.getBigNeos = this.getBigNeos.bind(this);
+    this.getDangerousNeos = this.getDangerousNeos.bind(this);
+    this.getSafeNeos = this.getSafeNeos.bind(this);
   }
 
   componentDidUpdate() {
@@ -46,7 +50,6 @@ class ParentFilters extends Component {
       // this.getSmallNeos();
     }
   }
-
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
@@ -107,6 +110,20 @@ class ParentFilters extends Component {
     this.setState({ foundBigs: resultBigs });
   }
 
+  getDangerousNeos() {
+    const resultDangerous = arrNeo.filter(infoNeo => {
+      return infoNeo.is_potentially_hazardous_asteroid === true;
+    });
+    this.setState({ foundDangerous: resultDangerous });
+  }
+
+  getSafeNeos() {
+    const resultSafe = arrNeo.filter(infoNeo => {
+      return infoNeo.is_potentially_hazardous_asteroid === false;
+    });
+    this.setState({ foundSafe: resultSafe });
+  }
+
   render() {
     return (
       <div className="AllFilter">
@@ -134,8 +151,14 @@ class ParentFilters extends Component {
           getBigNeos={this.getBigNeos}
           foundBigs={this.state.foundBigs}
         />
+        <DangerFilter
+          className="DangerFilter"
+          getDangerousNeos={this.getDangerousNeos}
+          foundDangerous={this.state.foundDangerous}
+          getSafeNeos={this.getSafeNeos}
+          foundSafe={this.state.foundSafe}
+        />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
-
       </div>
     );
   }
