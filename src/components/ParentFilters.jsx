@@ -3,6 +3,8 @@ import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import arrNeo from './jason';
+import DisplayCardNeo from './DisplayCardNeo';
+import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -27,26 +29,33 @@ class ParentFilters extends Component {
     this.createArrayDate = this.createArrayDate.bind(this);
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
+    // this.displayNeo = this.displayNeo.bind(this);
   }
 
-  componentDidUpdate() {
-    if (this.state.arrayDate !== null) {
-      this.getNeosByWeek();
-    }
-  }
+  // componentDidUpdate() {
+  //   if (this.state.arrayDate !== null) {
+  //     this.getNeosByWeek();
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   if (this.state.arrayResults !== null) {
+  //     this.displayNeo();
+  //   }
+  // }
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[0]
-        }&api_key=ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`
+          this.state.arrayDate[6]
+        }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
+          arrayResults: data.near_earth_objects
         });
       });
   }
@@ -68,12 +77,20 @@ class ParentFilters extends Component {
     this.setState({ foundNeo: resultNeo });
   }
 
+  // displayNeo() {
+  //   if (this.state.arrayResults) {
+  //     return this.state.arrayResults.map(list => <DisplayCardNeo value={list} neoList={list} />);
+  //   }
+  // }
+
   render() {
     return (
       <div>
         <Datepicker
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
+          getNeos={this.getNeosByWeek}
+          displayNeo={this.displayNeo}
         />
         <NameFilter
           handleNeoByName={this.handleNeoByName}
@@ -82,6 +99,7 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
+        <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
       </div>
     );
   }
