@@ -30,9 +30,7 @@ class ParentFilters extends Component {
       foundMediums: null,
       foundBigs: null,
       foundDangerous: null,
-      foundSafe: null,
-      foundNeo: null
-      flattenArray: null
+      foundSafe: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
@@ -51,15 +49,14 @@ class ParentFilters extends Component {
   getNeosByWeek() {
     axios
       .get(
-        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${
-          this.state.arrayDate[0]
-        }&end_date=$&api_key={ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`,
-        this.state.arrayDate[6]
+        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
+          this.state.arrayDate[6]
+        }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
+          arrayResults: data.near_earth_objects
         });
       });
   }
@@ -76,22 +73,24 @@ class ParentFilters extends Component {
 
   findNeoByName(neoName) {
     const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultNeo = flattenArray.find(neo => {
-      return neo.name === neoName;
+    const resultNeo = flattenArray.find(infoNeo => {
+      return infoNeo.name === neoName;
     });
     this.setState({ foundNeo: resultNeo });
   }
 
   // elements concernant la recherche par taille:
   getSmallNeos() {
-    const resultSmalls = arrNeo.filter(infoNeo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultSmalls = flattenArray.filter(infoNeo => {
       return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
     });
     this.setState({ foundSmalls: resultSmalls });
   }
 
   getMediumNeos() {
-    const resultMediums = arrNeo.filter(infoNeo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultMediums = flattenArray.filter(infoNeo => {
       return (
         (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &
         (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
@@ -101,21 +100,24 @@ class ParentFilters extends Component {
   }
 
   getBigNeos() {
-    const resultBigs = arrNeo.filter(infoNeo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultBigs = flattenArray.filter(infoNeo => {
       return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
     });
     this.setState({ foundBigs: resultBigs });
   }
 
   getDangerousNeos() {
-    const resultDangerous = arrNeo.filter(infoNeo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultDangerous = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === true;
     });
     this.setState({ foundDangerous: resultDangerous });
   }
 
   getSafeNeos() {
-    const resultSafe = arrNeo.filter(infoNeo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultSafe = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === false;
     });
     this.setState({ foundSafe: resultSafe });
@@ -129,7 +131,6 @@ class ParentFilters extends Component {
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
           getNeos={this.getNeosByWeek}
-          arrayResults={this.state.arrayResults}
         />
         <NameFilter
           className="NameFilter"
