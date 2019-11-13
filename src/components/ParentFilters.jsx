@@ -5,6 +5,7 @@ import NameFilter from './NameFilter';
 import SizeFilter from './SizeFilter';
 import DangerFilter from './DangerFilter';
 import arrNeo from './jason';
+import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -49,9 +50,6 @@ class ParentFilters extends Component {
       // this.getSmallNeos();
     }
   }
-  }
-
-
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
@@ -161,7 +159,6 @@ class ParentFilters extends Component {
           foundSafe={this.state.foundSafe}
         />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
-
       </div>
     );
   }
