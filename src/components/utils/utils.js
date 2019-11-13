@@ -8,9 +8,8 @@ function getFlattenArrayFromObject(myObject) {
   }
   const flattenArray = finalArray.reduce(flattenMap, []);
   return flattenArray;
-}
-
-function getFlattenArrayLength(myObject) {
+ }
+ function getFlattenArrayLength(myObject) {
   const finalArray = Object.keys(myObject).map(date => {
     return myObject[date];
   });
@@ -20,6 +19,6 @@ function getFlattenArrayLength(myObject) {
   }
   const flattenArray = finalArray.reduce(flattenMap, []);
   return flattenArray.length;
-}
-
-export default { getFlattenArrayFromObject, getFlattenArrayLength };
+ }
+ export { getFlattenArrayFromObject, getFlattenArrayLength };
+ 
