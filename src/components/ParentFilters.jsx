@@ -6,6 +6,7 @@ import NameFilter from './NameFilter';
 import arrNeo from './jason';
 import DisplayCardNeo from './DisplayCardNeo';
 import ListNeo from './ListNeo';
+import { getFlattenArrayFromObject } from './utils/utils';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -32,7 +33,6 @@ class ParentFilters extends Component {
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
   }
-
 
   // elements concernant le filtre date et creation du tableau global
 
@@ -62,7 +62,8 @@ class ParentFilters extends Component {
   }
 
   findNeoByName(neoName) {
-    const resultNeo = arrNeo.find(neo => {
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultNeo = flattenArray.find(neo => {
       return neo.name === neoName;
     });
     this.setState({ foundNeo: resultNeo });
@@ -86,7 +87,6 @@ class ParentFilters extends Component {
           foundNeo={this.state.foundNeo}
         />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
-
       </div>
     );
   }

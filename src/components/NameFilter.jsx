@@ -1,5 +1,5 @@
 import React from 'react';
-import DisplayCardNeoOTD from './DisplayCardNeoOTD';
+import DisplayCardNeo from './DisplayCardNeo';
 
 const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNeo }) => {
   return (
@@ -12,7 +12,7 @@ const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNe
         value={searchedInputName}
       />
       <button onClick={() => findNeoByName(searchedInputName)}>SEARCH</button>
-      {foundNeo && <DisplayCardNeoOTD neo={foundNeo} />}
+      {foundNeo && <DisplayCardNeo infoNeo={foundNeo} />}
     </div>
   );
 };
