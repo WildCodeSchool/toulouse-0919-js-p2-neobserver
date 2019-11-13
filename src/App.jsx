@@ -5,8 +5,7 @@ import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import AllNews from './components/AllNews';
-import ParentFilters from './components/ParentFilters';
-
+import Glossary from './components/Glossary';
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   render() {
@@ -17,7 +16,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/AllNeos" component={ParentFilters} />
           <Route path="/AllNews" component={AllNews} />
-          {/* <Route path="/" component={Glossary} /> */}
+          <Route path="/Glossary" component={Glossary} />
         </Switch>
         <Footer />
       </div>
