@@ -23,16 +23,21 @@
   color: rgb(255, 255, 255);
   font-family: 'lato', sans-serif;
   font-weight: 300;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.486);
+  letter-spacing: 3px;
   box-shadow:inset 0px 1px 0px 0px #ffffff;
-  background-color:transparent;
+  background-color: rgba(255, 255, 255, 0.082);
   border-radius:6px;
-  border:1px solid #dcdcdc;
+  border:1px solid #ffffff3b;
   cursor:pointer;
-  font-size:26px;
-  font-weight:bold;
-  padding:6px 24px;
+  font-size: 1.2em;
+  padding: 0.9em 2em;
   text-decoration:none;
   align-self: center;
+  justify-self: flex-end;
+  transition: 1.4s
+}
+
+.discover:hover {
+  background-color: rgba(209, 212, 255, 0.336);
+  color: rgb(32, 32, 32);
 }
