@@ -31,7 +31,7 @@ class ParentFilters extends Component {
       foundBigs: null,
       foundDangerous: null,
       foundSafe: null,
-      foundNeo: null
+      foundNeo: null,
       flattenArray: null
     };
 
@@ -58,7 +58,7 @@ class ParentFilters extends Component {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${
-          this.state.arrayDate[0]
+        this.state.arrayDate[0]
         }&end_date=$&api_key={ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`,
         this.state.arrayDate[6]
       )
@@ -81,10 +81,9 @@ class ParentFilters extends Component {
   }
 
   findNeoByName(neoName) {
-    const resultNeo = arrNeo.find(infoNeo => {
-      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-      const resultNeo = flattenArray.find(neo => {
-        return infoNeo.name === neoName;
+    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+    const resultNeo = flattenArray.find(neo => {
+      return neo.name === neoName;
     });
     this.setState({ foundNeo: resultNeo });
   }

@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 
 function DisplayNews({ News }) {
   return (
+    <div className="GlobalNews">
     <div className="contenerNews">
       <div className="DisplayNews">
         <h5 className="titleNews"> Today's News : </h5>
@@ -16,6 +17,7 @@ function DisplayNews({ News }) {
           <p className="NewsText">{News.explanation}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
