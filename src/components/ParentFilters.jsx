@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
+// import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
 import DisplayCardNeo from './DisplayCardNeo';
 import ListNeo from './ListNeo';
@@ -22,14 +23,14 @@ class ParentFilters extends Component {
       arrayDate: null,
       arrayResults: null,
       searchedName: '(2019 PA)',
-      foundNeo: null
+      foundNeo: null,
+      foundSmalls: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
     this.createArrayDate = this.createArrayDate.bind(this);
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
-    // this.displayNeo = this.displayNeo.bind(this);
   }
 
   // componentDidUpdate() {
@@ -77,22 +78,18 @@ class ParentFilters extends Component {
     this.setState({ foundNeo: resultNeo });
   }
 
-  // displayNeo() {
-  //   if (this.state.arrayResults) {
-  //     return this.state.arrayResults.map(list => <DisplayCardNeo value={list} neoList={list} />);
-  //   }
-  // }
-
   render() {
     return (
-      <div>
+      <div className="AllFilter">
         <Datepicker
+          className="DateFilter"
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
           getNeos={this.getNeosByWeek}
           displayNeo={this.displayNeo}
         />
         <NameFilter
+          className="NameFilter"
           handleNeoByName={this.handleNeoByName}
           handleSearchByName={this.handleSearchByName}
           findNeoByName={this.findNeoByName}
@@ -100,6 +97,7 @@ class ParentFilters extends Component {
           foundNeo={this.state.foundNeo}
         />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
+
       </div>
     );
   }
