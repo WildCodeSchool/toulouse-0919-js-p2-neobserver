@@ -6,6 +6,7 @@ import SizeFilter from './SizeFilter';
 import DangerFilter from './DangerFilter';
 import arrNeo from './jason';
 import ListNeo from './ListNeo';
+import { getFlattenArrayFromObject } from './utils/utils';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -31,6 +32,7 @@ class ParentFilters extends Component {
       foundDangerous: null,
       foundSafe: null,
       foundNeo: null
+      flattenArray: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
@@ -80,7 +82,9 @@ class ParentFilters extends Component {
 
   findNeoByName(neoName) {
     const resultNeo = arrNeo.find(infoNeo => {
-      return infoNeo.name === neoName;
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultNeo = flattenArray.find(neo => {
+        return infoNeo.name === neoName;
     });
     this.setState({ foundNeo: resultNeo });
   }
@@ -132,6 +136,7 @@ class ParentFilters extends Component {
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
           getNeos={this.getNeosByWeek}
+          arrayResults={this.state.arrayResults}
         />
         <NameFilter
           className="NameFilter"

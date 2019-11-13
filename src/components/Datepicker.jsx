@@ -1,6 +1,7 @@
 import React from 'react';
+import { getFlattenArrayLength } from './utils/utils';
 
-const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos }) => {
+const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }) => {
   return (
     <div>
       <input
@@ -12,7 +13,9 @@ const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos }) => {
       <button type="button" onClick={getNeos}>
         Search by week
       </button>
+      <p>{arrayResults && `We found ${getFlattenArrayLength(arrayResults)} NEOs`}</p>
     </div>
   );
 };
+
 export default Datepicker;
