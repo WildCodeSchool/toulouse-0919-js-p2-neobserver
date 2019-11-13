@@ -15,7 +15,7 @@ class App extends React.Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route path="/" component={Neos} /> */}
+          <Route path="/AllNeos" component={ParentFilters} />
           <Route path="/AllNews" component={AllNews} />
           {/* <Route path="/" component={Glossary} /> */}
         </Switch>

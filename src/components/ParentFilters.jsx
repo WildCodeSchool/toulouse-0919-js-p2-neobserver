@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
-// import SizeFilter from './SizeFilter';
+import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
-import DisplayCardNeo from './DisplayCardNeo';
-import ListNeo from './ListNeo';
-import { getFlattenArrayFromObject } from './utils/utils';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -40,14 +37,15 @@ class ParentFilters extends Component {
   getNeosByWeek() {
     axios
       .get(
-        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[6]
-        }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
+        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${
+          this.state.arrayDate[0]
+        }&end_date=$&api_key={ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`,
+        this.state.arrayDate[6]
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects
+          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
         });
       });
   }
@@ -70,6 +68,31 @@ class ParentFilters extends Component {
     this.setState({ foundNeo: resultNeo });
   }
 
+  // elements concernant la recherche par taille:
+  getSmallNeos() {
+    const resultSmalls = arrNeo.filter(infoNeo => {
+      return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
+    });
+    this.setState({ foundSmalls: resultSmalls });
+  }
+
+  getMediumNeos() {
+    const resultMediums = arrNeo.filter(infoNeo => {
+      return (
+        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &
+        (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
+      );
+    });
+    this.setState({ foundMediums: resultMediums });
+  }
+
+  getBigNeos() {
+    const resultBigs = arrNeo.filter(infoNeo => {
+      return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
+    });
+    this.setState({ foundBigs: resultBigs });
+  }
+
   render() {
     return (
       <div className="AllFilter">
@@ -77,8 +100,6 @@ class ParentFilters extends Component {
           className="DateFilter"
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
-          getNeos={this.getNeosByWeek}
-          arrayResults={this.state.arrayResults}
         />
         <NameFilter
           className="NameFilter"
@@ -88,7 +109,16 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
-        <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
+        <SizeFilter
+          className="SmallFilter"
+          getSmallNeos={this.getSmallNeos}
+          foundSmalls={this.state.foundSmalls}
+          infoNeo={this.state.infoNeo}
+          getMediumNeos={this.getMediumNeos}
+          foundMediums={this.state.foundMediums}
+          getBigNeos={this.getBigNeos}
+          foundBigs={this.state.foundBigs}
+        />
       </div>
     );
   }

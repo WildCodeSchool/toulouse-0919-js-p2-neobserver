@@ -5,7 +5,7 @@ import propTypes from 'prop-types';
 // si c'est moche c'est à causde de ESLint et ses sauts de lignes dégueulasses
 // usage d'espaces inséccables pour espacer les unités du résultat ex: 300&nbsp;km
 
-function DisplayCardNeoOTD({ neo }) {
+function DisplayCardNeoOTD({ neo, foundSmalls }) {
   return (
     <div className="DisplayCardNeoOTD">
       <div className="card_title">
