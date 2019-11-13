@@ -1,17 +1,9 @@
 import React from 'react';
 import DisplayCardNeo from './DisplayCardNeo';
+import { getFlattenArrayFromObject } from './utils/utils';
 
 const ListNeo = ({ arrayResults }) => {
-  const finalArray = Object.keys(arrayResults).map(date => {
-    return arrayResults[date];
-  });
-  function flattenMap(carry, current) {
-    carry = [...carry, ...current];
-    return carry;
-  }
-  const flattenArray = finalArray.reduce(flattenMap, []);
-  console.log(flattenArray);
-
+  const flattenArray = getFlattenArrayFromObject(arrayResults);
   return (
     <div>
       {flattenArray.map(infoNeo => {
