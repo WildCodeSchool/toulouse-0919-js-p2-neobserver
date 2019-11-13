@@ -25,7 +25,8 @@ class ParentFilters extends Component {
       arrayDate: null,
       arrayResults: null,
       searchedName: '',
-      foundNeo: null
+      foundNeo: null,
+      flattenArray: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
@@ -77,6 +78,7 @@ class ParentFilters extends Component {
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
           getNeos={this.getNeosByWeek}
+          arrayResults={this.state.arrayResults}
         />
         <NameFilter
           className="NameFilter"
