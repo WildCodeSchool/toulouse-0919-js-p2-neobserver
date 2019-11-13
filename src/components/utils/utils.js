@@ -22,4 +22,4 @@ function getFlattenArrayLength(myObject) {
   return flattenArray.length;
 }
 
-export { getFlattenArrayFromObject, getFlattenArrayLength };
+export default { getFlattenArrayFromObject, getFlattenArrayLength };

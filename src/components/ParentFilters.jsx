@@ -4,6 +4,7 @@ import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
+import getFlattenArrayFromObject from './utils/utils';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];

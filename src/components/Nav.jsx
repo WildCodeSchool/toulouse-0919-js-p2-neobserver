@@ -11,7 +11,7 @@ function Nav() {
           <img className="Logo" src={Logo} alt="" />
         </Link>
         <div className="NavButtons">
-          <Link className="NavLinkText" to="/" alt="link to neos">
+          <Link className="NavLinkText" to="/AllNeos" alt="link to neos">
             NEOs
           </Link>
           <Link className="NavLinkText" to="/AllNews" alt="link to News">

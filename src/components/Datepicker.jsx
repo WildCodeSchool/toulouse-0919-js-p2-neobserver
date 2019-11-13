@@ -1,5 +1,5 @@
 import React from 'react';
-import { getFlattenArrayLength } from './utils/utils';
+import getFlattenArrayLength from './utils/utils';
 
 const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }) => {
   return (

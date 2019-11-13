@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import AllNews from './components/AllNews';
 import Glossary from './components/Glossary';
+import ParentFilters from './components/ParentFilters';
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   render() {
