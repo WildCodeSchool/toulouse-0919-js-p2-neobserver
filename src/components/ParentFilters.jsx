@@ -15,6 +15,7 @@ function getWeekDates(startDate) {
   }
   return arrayConverted;
 }
+
 class ParentFilters extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,8 @@ class ParentFilters extends Component {
       foundMediums: null,
       foundBigs: null,
       foundDangerous: null,
-      foundSafe: null
+      foundSafe: null,
+      foundNeo: null
     };
 
     this.getNeosByWeek = this.getNeosByWeek.bind(this);
@@ -47,6 +49,9 @@ class ParentFilters extends Component {
       // this.getSmallNeos();
     }
   }
+  }
+
+
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
@@ -128,6 +133,7 @@ class ParentFilters extends Component {
           className="DateFilter"
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
+          getNeos={this.getNeosByWeek}
         />
         <NameFilter
           className="NameFilter"
@@ -154,6 +160,8 @@ class ParentFilters extends Component {
           getSafeNeos={this.getSafeNeos}
           foundSafe={this.state.foundSafe}
         />
+        <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
+
       </div>
     );
   }
