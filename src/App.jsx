@@ -13,7 +13,6 @@ class App extends React.Component {
     return (
       <div>
         <Nav />
-        <ParentFilters />
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route path="/" component={Neos} /> */}
