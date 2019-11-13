@@ -4,6 +4,8 @@ import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 // import SizeFilter from './SizeFilter';
 import arrNeo from './jason';
+import DisplayCardNeo from './DisplayCardNeo';
+import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -29,27 +31,32 @@ class ParentFilters extends Component {
     this.createArrayDate = this.createArrayDate.bind(this);
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
-    // this.findSmallNeo = this.findSmallNeo.bind(this);
   }
 
-  componentDidUpdate() {
-    if (this.state.arrayDate !== null) {
-      this.getNeosByWeek();
-    }
-  }
+  // componentDidUpdate() {
+  //   if (this.state.arrayDate !== null) {
+  //     this.getNeosByWeek();
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   if (this.state.arrayResults !== null) {
+  //     this.displayNeo();
+  //   }
+  // }
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
     axios
       .get(
         `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[0]
-        }&api_key=ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`
+          this.state.arrayDate[6]
+        }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
+          arrayResults: data.near_earth_objects
         });
       });
   }
@@ -71,15 +78,6 @@ class ParentFilters extends Component {
     this.setState({ foundNeo: resultNeo });
   }
 
-  // elements concernant la recherche par taille:
-
-  // findSmallNeo(arrNeo) {
-  //   const smallNeos = arrNeo.filter(neo => {
-  //     return neo.estimated_diameter.meters.estimated_diameter_min < 5;
-  //   });
-  //   this.setState({ foundSmalls: smallNeos });
-  // }
-
   render() {
     return (
       <div className="AllFilter">
@@ -87,6 +85,8 @@ class ParentFilters extends Component {
           className="DateFilter"
           handlerCreateArrayDate={this.createArrayDate}
           arrayDate={this.state.arrayDate}
+          getNeos={this.getNeosByWeek}
+          displayNeo={this.displayNeo}
         />
         <NameFilter
           className="NameFilter"
@@ -96,9 +96,8 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
-        {/* <SizeFilter />
-        findSmallNeo={this.state.foundSmalls}
-        foundSmalls={this.state.foundNeo} */}
+        <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
+
       </div>
     );
   }

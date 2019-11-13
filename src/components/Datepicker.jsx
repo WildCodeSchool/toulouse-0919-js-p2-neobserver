@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Datepicker = ({ handlerCreateArrayDate, arrayDate }) => {
+const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos }) => {
   return (
     <div>
       <input
@@ -9,6 +9,9 @@ const Datepicker = ({ handlerCreateArrayDate, arrayDate }) => {
         onChange={event => handlerCreateArrayDate(event)}
       />
       <input type="date" value={arrayDate ? arrayDate[7] : ''} disabled />
+      <button type="button" onClick={getNeos}>
+        Search by week
+      </button>
     </div>
   );
 };
