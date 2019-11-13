@@ -4,7 +4,6 @@ import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
 import SizeFilter from './SizeFilter';
 import DangerFilter from './DangerFilter';
-import arrNeo from './jason';
 import ListNeo from './ListNeo';
 import { getFlattenArrayFromObject } from './utils/utils';
 
@@ -85,18 +84,18 @@ class ParentFilters extends Component {
     const resultSmalls = flattenArray.filter(infoNeo => {
       return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
     });
-    this.setState({ foundSmalls: resultSmalls });
+    this.setState({ foundSmalls: resultSmalls, foundMediums: null, foundBigs: null });
   }
 
   getMediumNeos() {
     const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
     const resultMediums = flattenArray.filter(infoNeo => {
       return (
-        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &
+        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &&
         (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
       );
     });
-    this.setState({ foundMediums: resultMediums });
+    this.setState({ foundMediums: resultMediums, foundSmalls: null, foundBigs: null });
   }
 
   getBigNeos() {
@@ -104,7 +103,7 @@ class ParentFilters extends Component {
     const resultBigs = flattenArray.filter(infoNeo => {
       return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
     });
-    this.setState({ foundBigs: resultBigs });
+    this.setState({ foundBigs: resultBigs, foundSmalls: null, foundMediums: null });
   }
 
   getDangerousNeos() {
@@ -112,7 +111,7 @@ class ParentFilters extends Component {
     const resultDangerous = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === true;
     });
-    this.setState({ foundDangerous: resultDangerous });
+    this.setState({ foundDangerous: resultDangerous, foundSafe: null });
   }
 
   getSafeNeos() {
@@ -120,7 +119,7 @@ class ParentFilters extends Component {
     const resultSafe = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === false;
     });
-    this.setState({ foundSafe: resultSafe });
+    this.setState({ foundSafe: resultSafe, foundDangerous: null });
   }
 
   render() {

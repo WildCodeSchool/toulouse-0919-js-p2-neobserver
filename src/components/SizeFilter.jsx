@@ -1,6 +1,6 @@
-import React from 'react';
-import DisplayCardNeo from './DisplayCardNeo';
 import { Link } from 'react-router-dom';
+import DisplayCardNeo from './DisplayCardNeo';
+import React, { Component } from 'react';
 
 // import arrNeo from './jason';
 
@@ -12,6 +12,7 @@ const SizeFilter = ({
   getBigNeos,
   foundBigs
 }) => {
+
   return (
     <div>
       <div>
