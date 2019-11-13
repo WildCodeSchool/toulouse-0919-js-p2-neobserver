@@ -8,6 +8,7 @@ function Header() {
     <Parallax bgImage={wallpaper} strength={400}>
       <div className="Header">
         <h1 className="NEOBSERVER">NEOBSERVER</h1>
+        <h2 className="discover">Discover Near Earth Objects</h2>
       </div>
     </Parallax>
   );
