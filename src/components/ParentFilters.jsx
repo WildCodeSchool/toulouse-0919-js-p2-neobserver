@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
-import SizeFilter from './SizeFilter';
-import DangerFilter from './DangerFilter';
+import Sorting from './Sorting';
 import ListNeo from './ListNeo';
 import { getFlattenArrayFromObject } from './utils/utils';
 
@@ -111,7 +110,7 @@ class ParentFilters extends Component {
     const resultDangerous = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === true;
     });
-    this.setState({ foundDangerous: resultDangerous, foundSafe: null });
+    this.setState({ foundDangerous: resultDangerous, foundSafe: null, foundSmalls: null, foundMediums: null, foundBigs: null });
   }
 
   getSafeNeos() {
@@ -119,7 +118,7 @@ class ParentFilters extends Component {
     const resultSafe = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === false;
     });
-    this.setState({ foundSafe: resultSafe, foundDangerous: null });
+    this.setState({ foundSafe: resultSafe, foundDangerous: null, foundSmalls: null, foundMediums: null, foundBigs: null });
   }
 
   render() {
@@ -139,7 +138,7 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
-        <SizeFilter
+        <Sorting
           className="SmallFilter"
           getSmallNeos={this.getSmallNeos}
           foundSmalls={this.state.foundSmalls}
@@ -148,9 +147,6 @@ class ParentFilters extends Component {
           foundMediums={this.state.foundMediums}
           getBigNeos={this.getBigNeos}
           foundBigs={this.state.foundBigs}
-        />
-        <DangerFilter
-          className="DangerFilter"
           getDangerousNeos={this.getDangerousNeos}
           foundDangerous={this.state.foundDangerous}
           getSafeNeos={this.getSafeNeos}

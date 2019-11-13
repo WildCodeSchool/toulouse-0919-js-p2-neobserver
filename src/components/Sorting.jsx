@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom';
-import DisplayCardNeo from './DisplayCardNeo';
 import React, { Component } from 'react';
+import DisplayCardNeo from './DisplayCardNeo';
 
 // import arrNeo from './jason';
 
-const SizeFilter = ({
+const Sorting = ({
   foundSmalls,
   getSmallNeos,
   getMediumNeos,
   foundMediums,
   getBigNeos,
-  foundBigs
+  foundBigs,
+  foundDangerous,
+  getDangerousNeos,
+  getSafeNeos,
+  foundSafe
 }) => {
-
   return (
     <div>
       <div>
@@ -28,14 +31,24 @@ const SizeFilter = ({
         <Link to="/AllNeos" alt="link to neos">
           <button onClick={getBigNeos}>Big</button>
         </Link>
+
+        <Link to="/AllNeos" alt="link to neos">
+          <button onClick={getDangerousNeos}>Dangerous</button>
+        </Link>
+
+        <Link to="/AllNeos" alt="link to neos">
+          <button onClick={getSafeNeos}>Safe</button>
+        </Link>
       </div>
       <div>
         {foundSmalls && foundSmalls.map(small => <DisplayCardNeo infoNeo={small} />)}
         {foundMediums && foundMediums.map(medium => <DisplayCardNeo infoNeo={medium} />)}
         {foundBigs && foundBigs.map(big => <DisplayCardNeo infoNeo={big} />)}
+        {foundDangerous && foundDangerous.map(dangerous => <DisplayCardNeo infoNeo={dangerous} />)}
+        {foundSafe && foundSafe.map(safe => <DisplayCardNeo infoNeo={safe} />)}
       </div>
     </div>
   );
 };
 
-export default SizeFilter;
+export default Sorting;
