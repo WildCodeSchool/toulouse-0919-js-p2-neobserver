@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import './Header.css';
-import wallpaper from '../assets/planetTest.png';
+import wallpaper from '../assets/wallpaper.jpg';
 
 function Header() {
   return (
