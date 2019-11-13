@@ -16,6 +16,14 @@
   letter-spacing: 10px;
   align-self: center;
   text-shadow: 4.5px 7px 6px rgb(0, 0, 0);
+  padding-bottom: 20px;
+}
+
+.containerDiscover {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  padding-bottom: 10em;
 }
 
 .discover {
