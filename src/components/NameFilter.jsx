@@ -14,7 +14,7 @@ const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNe
           value={searchedInputName}
         />
         <button className="Btn-Name" onClick={() => findNeoByName(searchedInputName)}>
-          Search by name
+          Search by Name
         </button>
       </div>
       <div className="CardName">{foundNeo && <DisplayCardNeo infoNeo={foundNeo} />}</div>

@@ -28,6 +28,7 @@
 .Btn-Name {
   margin-right: 1em;
   margin-left: 1em;
+  width: auto;
 }
 .Btn-Name,
 .CalendarBtn {
@@ -99,6 +100,7 @@
   color: #ffffff;
   border-radius: 6px;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
+  letter-spacing: 1px;
 }
 
 .CalendarEnd {
@@ -109,6 +111,8 @@
 .AllFilter {
   display: flex;
   flex-direction: column;
+  border-radius: 6px;
+  border: 3px solid #ffffff3b;
 }
 .CardName {
   display: flex;

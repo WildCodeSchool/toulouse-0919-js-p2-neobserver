@@ -27,10 +27,10 @@
   transition: 1.4s;
 }
 
-.DisplayCardNeoOTD:hover{
+.DisplayCardNeoOTD:hover {
   background-color: #575757;
   color: white;
-  transform: scale(1.05);
+  transform: scale(0.3);
 }
 
 .card_texts {

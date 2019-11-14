@@ -1,11 +1,11 @@
-.AllNeos{
+.AllNeos {
   display: flex;
   flex-flow: row wrap;
   margin-top: 5em;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.All-btn{
+.All-btn {
   position: absolute;
 }
