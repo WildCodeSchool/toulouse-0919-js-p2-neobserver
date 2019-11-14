@@ -9,7 +9,7 @@ function DisplayCardNeo({ infoNeo }) {
   return (
     <div className="DisplayCardNeoOTD">
       <div className="card_title">
-        <h4>Name : {infoNeo.name}                </h4>
+        <h4>Name : {infoNeo.name} </h4>
       </div>
       <div className="card_texts">
         <div className="card_units">
