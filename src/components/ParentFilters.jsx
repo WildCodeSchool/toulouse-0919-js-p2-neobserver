@@ -71,67 +71,79 @@ class ParentFilters extends Component {
   }
 
   findNeoByName(neoName) {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultNeo = flattenArray.find(infoNeo => {
-      return infoNeo.name === neoName;
-    });
-    this.setState({ foundNeo: resultNeo });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultNeo = flattenArray.find(infoNeo => {
+        return infoNeo.name === neoName;
+      });
+      this.setState({ foundNeo: resultNeo });
+    }
   }
 
   // elements concernant la recherche par taille:
   getSmallNeos() {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultSmalls = flattenArray.filter(infoNeo => {
-      return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
-    });
-    this.setState({ foundSmalls: resultSmalls, foundMediums: null, foundBigs: null });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultSmalls = flattenArray.filter(infoNeo => {
+        return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
+      });
+      this.setState({ foundSmalls: resultSmalls, foundMediums: null, foundBigs: null });
+    }
   }
 
   getMediumNeos() {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultMediums = flattenArray.filter(infoNeo => {
-      return (
-        infoNeo.estimated_diameter.meters.estimated_diameter_min > 10 &&
-        infoNeo.estimated_diameter.meters.estimated_diameter_max < 150
-      );
-    });
-    this.setState({ foundMediums: resultMediums, foundSmalls: null, foundBigs: null });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultMediums = flattenArray.filter(infoNeo => {
+        return (
+          infoNeo.estimated_diameter.meters.estimated_diameter_min > 10 &&
+          infoNeo.estimated_diameter.meters.estimated_diameter_max < 150
+        );
+      });
+      this.setState({ foundMediums: resultMediums, foundSmalls: null, foundBigs: null });
+    }
   }
 
   getBigNeos() {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultBigs = flattenArray.filter(infoNeo => {
-      return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
-    });
-    this.setState({ foundBigs: resultBigs, foundSmalls: null, foundMediums: null });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultBigs = flattenArray.filter(infoNeo => {
+        return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
+      });
+      this.setState({ foundBigs: resultBigs, foundSmalls: null, foundMediums: null });
+    }
   }
 
   getDangerousNeos() {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultDangerous = flattenArray.filter(infoNeo => {
-      return infoNeo.is_potentially_hazardous_asteroid === true;
-    });
-    this.setState({
-      foundDangerous: resultDangerous,
-      foundSafe: null,
-      foundSmalls: null,
-      foundMediums: null,
-      foundBigs: null
-    });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultDangerous = flattenArray.filter(infoNeo => {
+        return infoNeo.is_potentially_hazardous_asteroid === true;
+      });
+      this.setState({
+        foundDangerous: resultDangerous,
+        foundSafe: null,
+        foundSmalls: null,
+        foundMediums: null,
+        foundBigs: null
+      });
+    }
   }
 
   getSafeNeos() {
-    const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
-    const resultSafe = flattenArray.filter(infoNeo => {
-      return infoNeo.is_potentially_hazardous_asteroid === false;
-    });
-    this.setState({
-      foundSafe: resultSafe,
-      foundDangerous: null,
-      foundSmalls: null,
-      foundMediums: null,
-      foundBigs: null
-    });
+    if (this.state.arrayResults) {
+      const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
+      const resultSafe = flattenArray.filter(infoNeo => {
+        return infoNeo.is_potentially_hazardous_asteroid === false;
+      });
+      this.setState({
+        foundSafe: resultSafe,
+        foundDangerous: null,
+        foundSmalls: null,
+        foundMediums: null,
+        foundBigs: null
+      });
+    }
   }
 
   render() {

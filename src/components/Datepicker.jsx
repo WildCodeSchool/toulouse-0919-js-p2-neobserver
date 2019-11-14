@@ -5,7 +5,7 @@ import './AllFilter.css';
 const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }) => {
   return (
     <div className="CalendarGlobal">
-      <button className="CalendarBtn" type="button" onClick={getNeos}>
+      <button className="CalendarBtn" type="button" onClick={arrayDate ? getNeos : null}>
         Search by week
       </button>
       <input
