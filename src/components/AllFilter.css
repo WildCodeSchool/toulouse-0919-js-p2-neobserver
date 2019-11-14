@@ -14,7 +14,7 @@
   font-weight: 200;
   letter-spacing: 3px;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background-color: rgba(255, 255, 255, 0.082);
+  background-color: rgba(7, 7, 7, 0.082);
   border-radius: 6px;
   border: 1px solid #ffffff3b;
   cursor: pointer;
@@ -56,4 +56,22 @@
   border: 1px solid #ffffff3b;
   cursor: pointer;
   font-size: 0.8em;
+}
+
+.CalendarGlobal {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3em;
+}
+
+.CalendarStart,
+.CalendarEnd {
+  border: 1px solid #ffffff3b;
+  cursor: pointer;
+  background-color: rgba(7, 7, 7, 0.082);
+  color: #ffffff;
+}
+
+.CalendarEnd {
+  font-style: italic;
 }
