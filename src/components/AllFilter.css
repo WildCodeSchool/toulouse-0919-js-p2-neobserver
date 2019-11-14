@@ -58,7 +58,7 @@
 .Btn-Name:hover,
 .CalendarBtn:hover {
   background-color: rgba(209, 212, 255, 0.336);
-  color: rgb(32, 32, 32);
+  color: #7c97db;
 }
 .CalendarBtn {
   margin-left: 2em;
