@@ -41,6 +41,7 @@ class ParentFilters extends Component {
     this.getBigNeos = this.getBigNeos.bind(this);
     this.getDangerousNeos = this.getDangerousNeos.bind(this);
     this.getSafeNeos = this.getSafeNeos.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   // elements concernant le filtre date et creation du tableau global
@@ -146,16 +147,21 @@ class ParentFilters extends Component {
     }
   }
 
+  clearSearch() {
+    this.setState({ arrayDate: null, arrayResults: null });
+  }
+
   render() {
     return (
-      <div className={this.state.arrayResults ? "AllFilter" : "EmptySearch"}>
+      <div className={this.state.arrayResults ? 'AllFilter' : 'EmptySearch'}>
         <div className="DateNameFilter">
           <Datepicker
             className="DateFilter"
             handlerCreateArrayDate={this.createArrayDate}
             arrayDate={this.state.arrayDate}
             getNeos={this.getNeosByWeek}
-            />
+            clearSearch={this.clearSearch}
+          />
           <NameFilter
             className="NameFilter"
             handleNeoByName={this.handleNeoByName}
@@ -163,7 +169,7 @@ class ParentFilters extends Component {
             findNeoByName={this.findNeoByName}
             searchedInputName={this.state.searchedName}
             foundNeo={this.state.foundNeo}
-            />
+          />
         </div>
         <Sorting
           className="SmallFilter"
@@ -179,9 +185,13 @@ class ParentFilters extends Component {
           getSafeNeos={this.getSafeNeos}
           foundSafe={this.state.foundSafe}
           arrayResults={this.state.arrayResults}
-          />
+        />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
-        {this.state.arrayResults ? null : <p style={{ textAlign: 'center', color: 'white', marginTop: '10%' }}>Results will appear here</p>}
+        {this.state.arrayResults ? null : (
+          <p style={{ textAlign: 'center', color: 'grey', marginTop: '10%' }}>
+            Results will appear here
+          </p>
+        )}
       </div>
     );
   }

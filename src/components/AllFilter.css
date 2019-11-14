@@ -50,6 +50,23 @@
   transition: 0.6s;
 }
 
+.clearSearch {
+  font-variant: small-caps;
+  color: white;
+  font-family: 'lato', sans-serif;
+  font-weight: 200;
+  letter-spacing: 3px;
+  background-color: rgba(7, 7, 7, 0.082);
+  border-radius: 6px;
+  border: 1px solid #ffffff3b;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.3em 1em 0.3em 1em;
+  text-decoration: none;
+  transition: 0.6s;
+  margin-left: 1em;
+}
+
 .Btn-Small:hover,
 .Btn-Medium:hover,
 .Btn-Big:hover,

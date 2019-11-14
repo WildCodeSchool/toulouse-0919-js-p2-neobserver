@@ -2,7 +2,7 @@ import React from 'react';
 import { getFlattenArrayLength } from './utils/utils';
 import './AllFilter.css';
 
-const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }) => {
+const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults, clearSearch }) => {
   return (
     <div className="CalendarGlobal">
       <button className="CalendarBtn" type="button" onClick={arrayDate ? getNeos : null}>
@@ -15,7 +15,9 @@ const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }
         onChange={event => handlerCreateArrayDate(event)}
       />
       <input className="CalendarEnd" type="date" value={arrayDate ? arrayDate[7] : ''} disabled />
-      <p>{arrayResults && `We found ${getFlattenArrayLength(arrayResults)} NEOs`}</p>
+      <button className="clearSearch" onClick={clearSearch}>
+        Clear
+      </button>
     </div>
   );
 };
