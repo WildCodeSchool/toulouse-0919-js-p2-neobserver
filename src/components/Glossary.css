@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgb(1,1,1);
+  background: radial-gradient(circle, rgba(1,1,1,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 45%, rgba(113,113,113,1) 57%, rgba(17,1,1,1) 80%, rgba(22,21,21,1) 100%);
 }
 
 .AllDef {

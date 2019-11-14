@@ -25,7 +25,10 @@
   transition: 1.4s;
   margin-bottom: 4em;
 }
-
+.Btn-Name {
+  margin-right: 1em;
+  margin-left: 1em;
+}
 .Btn-Name,
 .CalendarBtn {
   font-variant: small-caps;
@@ -79,6 +82,7 @@
   cursor: pointer;
   font-size: 0.8em;
   margin-top: 0.9em;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
 }
 
 .CalendarGlobal {
@@ -93,10 +97,13 @@
   cursor: pointer;
   background-color: rgba(7, 7, 7, 0.082);
   color: #ffffff;
+  border-radius: 6px;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
 }
 
 .CalendarEnd {
   font-style: italic;
+  color: darkgrey;
 }
 
 .AllFilter {
@@ -113,4 +120,5 @@
   flex-basis: content;
   align-items: flex-end;
   justify-content: space-between;
+  margin-bottom: 3em;
 }
