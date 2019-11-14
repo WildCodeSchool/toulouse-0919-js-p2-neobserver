@@ -6,8 +6,7 @@
 .Btn-Medium,
 .Btn-Big,
 .Btn-Dangerous,
-.Btn-Safe,
-.Btn-Name {
+.Btn-Safe {
   font-variant: small-caps;
   color: rgb(255, 255, 255);
   font-family: 'lato', sans-serif;
@@ -27,16 +26,40 @@
   margin-bottom: 4em;
 }
 
+.Btn-Name,
+.CalendarBtn {
+  font-variant: small-caps;
+  color: rgb(255, 255, 255);
+  font-family: 'lato', sans-serif;
+  font-weight: 200;
+  letter-spacing: 3px;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background-color: rgba(7, 7, 7, 0.082);
+  border-radius: 6px;
+  border: 1px solid #ffffff3b;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.3em 2em 0.3em 2em;
+  text-decoration: none;
+  align-self: center;
+  justify-self: flex-end;
+  transition: 1.4s;
+}
+
 .Btn-Small:hover,
 .Btn-Medium:hover,
 .Btn-Big:hover,
 .Btn-Dangerous:hover,
 .Btn-Safe:hover,
-.Btn-Name:hover {
+.Btn-Name:hover,
+.CalendarBtn:hover {
   background-color: rgba(209, 212, 255, 0.336);
   color: rgb(32, 32, 32);
 }
-
+.CalendarBtn {
+  margin-left: 2em;
+  margin-right: 1em;
+}
 .Btn-Dangerous {
   margin-left: 15px;
 }
@@ -45,7 +68,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
 .Input-Name {
   width: 150px;
   height: 50%;
@@ -56,17 +78,18 @@
   border: 1px solid #ffffff3b;
   cursor: pointer;
   font-size: 0.8em;
+  margin-top: 0.9em;
 }
 
 .CalendarGlobal {
   display: flex;
   justify-content: flex-start;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .CalendarStart,
 .CalendarEnd {
-  border: 1px solid #ffffff3b;
+  border: 2px solid #ffffff3b;
   cursor: pointer;
   background-color: rgba(7, 7, 7, 0.082);
   color: #ffffff;
@@ -74,4 +97,20 @@
 
 .CalendarEnd {
   font-style: italic;
+}
+
+.AllFilter {
+  display: flex;
+  flex-direction: column;
+}
+.CardName {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.DateNameFilter {
+  display: flex;
+  flex-basis: content;
+  align-items: flex-end;
+  justify-content: space-between;
 }

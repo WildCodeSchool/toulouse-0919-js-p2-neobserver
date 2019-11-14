@@ -5,6 +5,9 @@ import './AllFilter.css';
 const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }) => {
   return (
     <div className="CalendarGlobal">
+      <button className="CalendarBtn" type="button" onClick={getNeos}>
+        Search by week
+      </button>
       <input
         className="CalendarStart"
         type="date"
@@ -12,12 +15,7 @@ const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults }
         onChange={event => handlerCreateArrayDate(event)}
       />
       <input className="CalendarEnd" type="date" value={arrayDate ? arrayDate[7] : ''} disabled />
-      <button type="button" onClick={getNeos}>
-        Search by week
-      </button>
-      <p className="CalendarBtn">
-        {arrayResults && `We found ${getFlattenArrayLength(arrayResults)} NEOs`}
-      </p>
+      <p>{arrayResults && `We found ${getFlattenArrayLength(arrayResults)} NEOs`}</p>
     </div>
   );
 };
