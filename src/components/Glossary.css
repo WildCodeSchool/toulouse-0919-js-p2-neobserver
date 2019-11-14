@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  
 }
 
 .BigDiv {
@@ -10,6 +10,7 @@
 }
 
 .AllDef {
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

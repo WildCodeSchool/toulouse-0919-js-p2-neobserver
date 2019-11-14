@@ -24,12 +24,12 @@
   border-radius: 10px;
   margin-left: 2%;
   margin-bottom: 10px;
+  transition: 1.4s;
 }
 
 .DisplayCardNeoOTD:hover{
   background-color: #444444;
   color: white;
-  transition: 1.4s;
 }
 
 .card_texts {
