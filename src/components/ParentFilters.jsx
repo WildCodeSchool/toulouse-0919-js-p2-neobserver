@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Datepicker from './Datepicker';
 import NameFilter from './NameFilter';
-// import SizeFilter from './SizeFilter';
+import SizeFilter from './SizeFilter';
+import DangerFilter from './DangerFilter';
 import arrNeo from './jason';
-import DisplayCardNeo from './DisplayCardNeo';
 import ListNeo from './ListNeo';
 
 function getWeekDates(startDate) {
@@ -24,6 +24,12 @@ class ParentFilters extends Component {
       arrayDate: null,
       arrayResults: null,
       searchedName: '',
+      foundNeo: null,
+      foundSmalls: null,
+      foundMediums: null,
+      foundBigs: null,
+      foundDangerous: null,
+      foundSafe: null,
       foundNeo: null
     };
 
@@ -31,22 +37,33 @@ class ParentFilters extends Component {
     this.createArrayDate = this.createArrayDate.bind(this);
     this.handleNeoByName = this.handleNeoByName.bind(this);
     this.findNeoByName = this.findNeoByName.bind(this);
+    this.getSmallNeos = this.getSmallNeos.bind(this);
+    this.getMediumNeos = this.getMediumNeos.bind(this);
+    this.getBigNeos = this.getBigNeos.bind(this);
+    this.getDangerousNeos = this.getDangerousNeos.bind(this);
+    this.getSafeNeos = this.getSafeNeos.bind(this);
   }
 
-
+  componentDidUpdate() {
+    if (this.state.arrayDate !== null) {
+      this.getNeosByWeek();
+      // this.getSmallNeos();
+    }
+  }
   // elements concernant le filtre date et creation du tableau global
 
   getNeosByWeek() {
     axios
       .get(
-        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.arrayDate[0]}&end_date=${
-          this.state.arrayDate[6]
-        }&api_key=9LS4vKfBfNWbLDCdomOSdhqNhTpib0qw6G6p8nVJ`
+        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${
+          this.state.arrayDate[0]
+        }&end_date=$&api_key={ckBjfkOb7jdTYgZE0HyT1B9L5m0oe6lHQhSkLfkX`,
+        this.state.arrayDate[6]
       )
       .then(response => response.data)
       .then(data => {
         this.setState({
-          arrayResults: data.near_earth_objects
+          arrayResults: data.near_earth_objects[`${this.state.arrayDate[0]}`]
         });
       });
   }
@@ -62,10 +79,49 @@ class ParentFilters extends Component {
   }
 
   findNeoByName(neoName) {
-    const resultNeo = arrNeo.find(neo => {
-      return neo.name === neoName;
+    const resultNeo = arrNeo.find(infoNeo => {
+      return infoNeo.name === neoName;
     });
     this.setState({ foundNeo: resultNeo });
+  }
+
+  // elements concernant la recherche par taille:
+  getSmallNeos() {
+    const resultSmalls = arrNeo.filter(infoNeo => {
+      return infoNeo.estimated_diameter.meters.estimated_diameter_min < 10;
+    });
+    this.setState({ foundSmalls: resultSmalls });
+  }
+
+  getMediumNeos() {
+    const resultMediums = arrNeo.filter(infoNeo => {
+      return (
+        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &
+        (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
+      );
+    });
+    this.setState({ foundMediums: resultMediums });
+  }
+
+  getBigNeos() {
+    const resultBigs = arrNeo.filter(infoNeo => {
+      return infoNeo.estimated_diameter.meters.estimated_diameter_max > 150;
+    });
+    this.setState({ foundBigs: resultBigs });
+  }
+
+  getDangerousNeos() {
+    const resultDangerous = arrNeo.filter(infoNeo => {
+      return infoNeo.is_potentially_hazardous_asteroid === true;
+    });
+    this.setState({ foundDangerous: resultDangerous });
+  }
+
+  getSafeNeos() {
+    const resultSafe = arrNeo.filter(infoNeo => {
+      return infoNeo.is_potentially_hazardous_asteroid === false;
+    });
+    this.setState({ foundSafe: resultSafe });
   }
 
   render() {
@@ -85,8 +141,24 @@ class ParentFilters extends Component {
           searchedInputName={this.state.searchedName}
           foundNeo={this.state.foundNeo}
         />
+        <SizeFilter
+          className="SmallFilter"
+          getSmallNeos={this.getSmallNeos}
+          foundSmalls={this.state.foundSmalls}
+          infoNeo={this.state.infoNeo}
+          getMediumNeos={this.getMediumNeos}
+          foundMediums={this.state.foundMediums}
+          getBigNeos={this.getBigNeos}
+          foundBigs={this.state.foundBigs}
+        />
+        <DangerFilter
+          className="DangerFilter"
+          getDangerousNeos={this.getDangerousNeos}
+          foundDangerous={this.state.foundDangerous}
+          getSafeNeos={this.getSafeNeos}
+          foundSafe={this.state.foundSafe}
+        />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
-
       </div>
     );
   }

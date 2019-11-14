@@ -1,10 +1,10 @@
 import React from 'react';
-import DisplayCardNeoOTD from './DisplayCardNeoOTD';
+import DisplayCardNeo from './DisplayCardNeo';
 
 const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNeo }) => {
   return (
     <div>
-      <label htmlFor="name"> Name :</label>
+      <label htmlFor="name"> Name</label>
       <input
         onChange={event => handleNeoByName(event)}
         id="searchName"
@@ -12,7 +12,7 @@ const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNe
         value={searchedInputName}
       />
       <button onClick={() => findNeoByName(searchedInputName)}>SEARCH</button>
-      {foundNeo && <DisplayCardNeoOTD neo={foundNeo} />}
+      {foundNeo && <DisplayCardNeo infoNeo={foundNeo} />}
     </div>
   );
 };

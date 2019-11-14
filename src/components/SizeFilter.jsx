@@ -1,15 +1,34 @@
 import React from 'react';
-import DisplayCardNeoOTD from './DisplayCardNeoOTD';
-import arrNeo from './jason';
-import DisplayNews from './DisplayNews';
+import DisplayCardNeo from './DisplayCardNeo';
+import { Link } from 'react-router-dom';
 
-const SizeFilter = ({ findSmallNeo, findMediumNeo, findBigNeo, arrNeo, foundSmalls }) => {
+// import arrNeo from './jason';
+
+const SizeFilter = ({
+  foundSmalls,
+  getSmallNeos,
+  getMediumNeos,
+  foundMediums,
+  getBigNeos,
+  foundBigs
+}) => {
   return (
     <div>
-      <button onClick={() => findSmallNeo(arrNeo)}>SMALL</button>
-      {foundSmalls && <DisplayCardNeoOTD neo={foundSmalls} />}
-      <button onClick={() => findMediumNeo(arrNeo)}>MEDIUM</button>
-      <button onClick={() => findBigNeo(arrNeo)}>BIG</button>
+      <label htmlFor="small">Size</label>
+      <Link to="/AllNeos" alt="link to neos">
+        <button onClick={() => getSmallNeos()}>Small</button>
+        {foundSmalls && foundSmalls.map(small => <DisplayCardNeo infoNeo={small} />)}
+      </Link>
+
+      <Link to="/AllNeos" alt="link to neos">
+        <button onClick={() => getMediumNeos()}>Medium</button>
+        {foundMediums && foundMediums.map(medium => <DisplayCardNeo infoNeo={medium} />)}
+      </Link>
+
+      <Link to="/AllNeos" alt="link to neos">
+        <button onClick={() => getBigNeos()}>Big</button>
+        {foundBigs && foundBigs.map(big => <DisplayCardNeo infoNeo={big} />)}
+      </Link>
     </div>
   );
 };
