@@ -2,20 +2,21 @@
   display: flex;
   justify-content: center;
 }
+
+
 .Btn-Small,
 .Btn-Medium,
 .Btn-Big,
 .Btn-Dangerous,
 .Btn-Safe {
   font-variant: small-caps;
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: 'lato', sans-serif;
   font-weight: 200;
   letter-spacing: 3px;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background-color: rgba(7, 7, 7, 0.082);
+  background-color: rgba(255, 255, 255, 0.075);
+  border:1px solid #ffffff3b;
   border-radius: 6px;
-  border: 1px solid #ffffff3b;
   cursor: pointer;
   font-size: 0.8em;
   padding: 0.9em 2em;
@@ -28,16 +29,15 @@
 .Btn-Name {
   margin-right: 1em;
   margin-left: 1em;
-  width: auto;
+  width: 14.8em;
 }
 .Btn-Name,
 .CalendarBtn {
   font-variant: small-caps;
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: 'lato', sans-serif;
   font-weight: 200;
   letter-spacing: 3px;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
   background-color: rgba(7, 7, 7, 0.082);
   border-radius: 6px;
   border: 1px solid #ffffff3b;
@@ -47,7 +47,7 @@
   text-decoration: none;
   align-self: center;
   justify-self: flex-end;
-  transition: 1.4s;
+  transition: 0.6s;
 }
 
 .Btn-Small:hover,
@@ -57,8 +57,7 @@
 .Btn-Safe:hover,
 .Btn-Name:hover,
 .CalendarBtn:hover {
-  background-color: rgba(209, 212, 255, 0.336);
-  color: rgb(32, 32, 32);
+  background-color: rgba(209, 212, 255, 0.151);
 }
 .CalendarBtn {
   margin-left: 2em;
@@ -75,14 +74,13 @@
 .Input-Name {
   width: 150px;
   height: 50%;
-  margin-top: 1%;
   margin-right: 0.3%;
   margin-left: 1%;
   border-radius: 6px;
   border: 1px solid #ffffff3b;
   cursor: pointer;
   font-size: 0.8em;
-  margin-top: 0.9em;
+  margin-top: 0.3em;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
 }
 
@@ -112,7 +110,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 6px;
-  border: 3px solid #ffffff3b;
 }
 .CardName {
   display: flex;
@@ -121,7 +118,7 @@
 
 .DateNameFilter {
   display: flex;
-  flex-basis: content;
+  align-items: baseline;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 3em;
