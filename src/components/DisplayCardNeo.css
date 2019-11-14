@@ -28,8 +28,9 @@
 }
 
 .DisplayCardNeoOTD:hover{
-  background-color: #444444;
+  background-color: #575757;
   color: white;
+  transform: scale(1.05);
 }
 
 .card_texts {
