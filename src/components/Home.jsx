@@ -2,7 +2,6 @@ import React from 'react';
 import CardNeoOTD from './CardNeoOTD';
 import News from './News';
 import Header from './Header';
-import ParentFilters from './ParentFilters';
 import './Home.css';
 
 function Home() {
@@ -11,9 +10,8 @@ function Home() {
       <Header />
       <div className="NeoAndFiltres">
         <CardNeoOTD />
-        <ParentFilters className="Filters" />
+        <News />
       </div>
-      <News />
     </div>
   );
 }

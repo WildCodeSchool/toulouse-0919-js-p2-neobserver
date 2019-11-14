@@ -5,8 +5,7 @@
 
 .nav {
   width: 100%;
-  background-color: #3b3b3b;
-  height: 75px;
+  background: rgba(0, 0, 0, 0), 35);
 }
 
 .NavBar {
@@ -36,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 25px;
+  padding-left: 25px;
 }
 
 /*.NavLink :first-of-type {

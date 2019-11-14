@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import DisplayCardNeo from './DisplayCardNeo';
-import { Link } from 'react-router-dom';
 
 // import arrNeo from './jason';
 
