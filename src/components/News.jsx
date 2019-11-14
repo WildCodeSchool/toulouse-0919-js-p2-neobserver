@@ -28,7 +28,7 @@ class News extends React.Component {
 
   render() {
     return (
-      <div className="app">{this.state.News ? <DisplayNews News={this.state.News} /> : null}</div>
+      <div className="NewsPage">{this.state.News ? <DisplayNews News={this.state.News} /> : null}</div>
     );
   }
 }

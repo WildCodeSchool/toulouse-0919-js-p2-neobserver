@@ -1,9 +1,10 @@
 import React from 'react';
 import FormatDateApi from './FormatDateApi';
+import './DisplayNews.css';
 
 function AllNews() {
   return (
-    <div>
+    <div className="AllNews">
       <FormatDateApi />
     </div>
   );
