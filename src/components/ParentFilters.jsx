@@ -148,7 +148,15 @@ class ParentFilters extends Component {
   }
 
   clearSearch() {
-    this.setState({ arrayDate: null, arrayResults: null });
+    this.setState({
+      arrayDate: null,
+      arrayResults: null,
+      foundSmalls: null,
+      foundMediums: null,
+      foundBigs: null,
+      foundSafe: null,
+      foundDangerous: null
+    });
   }
 
   render() {
