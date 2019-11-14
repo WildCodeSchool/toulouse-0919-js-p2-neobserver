@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'lato', sans-serif;
 }
 
 .card_units,
@@ -21,14 +22,21 @@
   height: 280px;
   width: 500px;
   border-radius: 10px;
-  margin-left: 10px;
+  margin-left: 2%;
+  margin-bottom: 1.5em;
+  transition: 1.4s;
+}
+
+.DisplayCardNeoOTD:hover {
+  background-color: #414141;
+  color: white;
 }
 
 .card_texts {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10em;
+  height: 11em;
 }
 
 .card_fetch_results {
@@ -51,7 +59,7 @@
 }
 
 .JPLlink {
-  margin-top: 0;
+  margin-bottom: 0.8em;
   align-self: center;
   color: #7c97db;
   width: 12em;

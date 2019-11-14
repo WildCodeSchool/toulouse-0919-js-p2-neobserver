@@ -5,6 +5,7 @@ import NameFilter from './NameFilter';
 import Sorting from './Sorting';
 import ListNeo from './ListNeo';
 import { getFlattenArrayFromObject } from './utils/utils';
+import './AllFilter.css';
 
 function getWeekDates(startDate) {
   const arrayConverted = [startDate];
@@ -90,8 +91,8 @@ class ParentFilters extends Component {
     const flattenArray = getFlattenArrayFromObject(this.state.arrayResults);
     const resultMediums = flattenArray.filter(infoNeo => {
       return (
-        (infoNeo.estimated_diameter.meters.estimated_diameter_min > 10) &&
-        (infoNeo.estimated_diameter.meters.estimated_diameter_max < 150)
+        infoNeo.estimated_diameter.meters.estimated_diameter_min > 10 &&
+        infoNeo.estimated_diameter.meters.estimated_diameter_max < 150
       );
     });
     this.setState({ foundMediums: resultMediums, foundSmalls: null, foundBigs: null });
@@ -110,7 +111,13 @@ class ParentFilters extends Component {
     const resultDangerous = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === true;
     });
-    this.setState({ foundDangerous: resultDangerous, foundSafe: null, foundSmalls: null, foundMediums: null, foundBigs: null });
+    this.setState({
+      foundDangerous: resultDangerous,
+      foundSafe: null,
+      foundSmalls: null,
+      foundMediums: null,
+      foundBigs: null
+    });
   }
 
   getSafeNeos() {
@@ -118,26 +125,34 @@ class ParentFilters extends Component {
     const resultSafe = flattenArray.filter(infoNeo => {
       return infoNeo.is_potentially_hazardous_asteroid === false;
     });
-    this.setState({ foundSafe: resultSafe, foundDangerous: null, foundSmalls: null, foundMediums: null, foundBigs: null });
+    this.setState({
+      foundSafe: resultSafe,
+      foundDangerous: null,
+      foundSmalls: null,
+      foundMediums: null,
+      foundBigs: null
+    });
   }
 
   render() {
     return (
       <div className="AllFilter">
-        <Datepicker
-          className="DateFilter"
-          handlerCreateArrayDate={this.createArrayDate}
-          arrayDate={this.state.arrayDate}
-          getNeos={this.getNeosByWeek}
-        />
-        <NameFilter
-          className="NameFilter"
-          handleNeoByName={this.handleNeoByName}
-          handleSearchByName={this.handleSearchByName}
-          findNeoByName={this.findNeoByName}
-          searchedInputName={this.state.searchedName}
-          foundNeo={this.state.foundNeo}
-        />
+        <div className="DateNameFilter">
+          <Datepicker
+            className="DateFilter"
+            handlerCreateArrayDate={this.createArrayDate}
+            arrayDate={this.state.arrayDate}
+            getNeos={this.getNeosByWeek}
+          />
+          <NameFilter
+            className="NameFilter"
+            handleNeoByName={this.handleNeoByName}
+            handleSearchByName={this.handleSearchByName}
+            findNeoByName={this.findNeoByName}
+            searchedInputName={this.state.searchedName}
+            foundNeo={this.state.foundNeo}
+          />
+        </div>
         <Sorting
           className="SmallFilter"
           getSmallNeos={this.getSmallNeos}
