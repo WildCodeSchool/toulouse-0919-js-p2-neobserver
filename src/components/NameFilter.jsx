@@ -3,15 +3,18 @@ import DisplayCardNeo from './DisplayCardNeo';
 
 const NameFilter = ({ handleNeoByName, findNeoByName, searchedInputName, foundNeo }) => {
   return (
-    <div>
+    <div className="Filter-Name">
       <label htmlFor="name"> Name</label>
       <input
+        className="Input-Name"
         onChange={event => handleNeoByName(event)}
         id="searchName"
         type="text"
         value={searchedInputName}
       />
-      <button onClick={() => findNeoByName(searchedInputName)}>SEARCH</button>
+      <button className="Btn-Name" onClick={() => findNeoByName(searchedInputName)}>
+        Search
+      </button>
       {foundNeo && <DisplayCardNeo infoNeo={foundNeo} />}
     </div>
   );

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import DisplayCardNeo from './DisplayCardNeo';
+import './AllFilter.css';
 
 // import arrNeo from './jason';
 
@@ -17,27 +18,37 @@ const Sorting = ({
   foundSafe
 }) => {
   return (
-    <div>
-      <div>
-        <label htmlFor="small">Size</label>
+    <div className="Btn-Sorting">
+      <div className="All-btn">
+        <label htmlFor="small"></label>
         <Link to="/AllNeos" alt="link to neos">
-          <button onClick={getSmallNeos}>Small</button>
+          <button className="Btn-Small" onClick={getSmallNeos}>
+            Small
+          </button>
         </Link>
 
         <Link to="/AllNeos" alt="link to neos">
-          <button onClick={getMediumNeos}>Medium</button>
+          <button className="Btn-Medium" onClick={getMediumNeos}>
+            Medium
+          </button>
         </Link>
 
         <Link to="/AllNeos" alt="link to neos">
-          <button onClick={getBigNeos}>Big</button>
+          <button className="Btn-Big" onClick={getBigNeos}>
+            Big
+          </button>
         </Link>
 
         <Link to="/AllNeos" alt="link to neos">
-          <button onClick={getDangerousNeos}>Dangerous</button>
+          <button className="Btn-Dangerous" onClick={getDangerousNeos}>
+            Dangerous
+          </button>
         </Link>
 
         <Link to="/AllNeos" alt="link to neos">
-          <button onClick={getSafeNeos}>Safe</button>
+          <button className="Btn-Safe" onClick={getSafeNeos}>
+            Safe
+          </button>
         </Link>
       </div>
       <div>

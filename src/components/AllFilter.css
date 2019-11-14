@@ -1,0 +1,59 @@
+.Btn-Sorting {
+  display: flex;
+  justify-content: center;
+}
+.Btn-Small,
+.Btn-Medium,
+.Btn-Big,
+.Btn-Dangerous,
+.Btn-Safe,
+.Btn-Name {
+  font-variant: small-caps;
+  color: rgb(255, 255, 255);
+  font-family: 'lato', sans-serif;
+  font-weight: 200;
+  letter-spacing: 3px;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background-color: rgba(255, 255, 255, 0.082);
+  border-radius: 6px;
+  border: 1px solid #ffffff3b;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.9em 2em;
+  text-decoration: none;
+  align-self: center;
+  justify-self: flex-end;
+  transition: 1.4s;
+  margin-bottom: 4em;
+}
+
+.Btn-Small:hover,
+.Btn-Medium:hover,
+.Btn-Big:hover,
+.Btn-Dangerous:hover,
+.Btn-Safe:hover,
+.Btn-Name:hover {
+  background-color: rgba(209, 212, 255, 0.336);
+  color: rgb(32, 32, 32);
+}
+
+.Btn-Dangerous {
+  margin-left: 15px;
+}
+
+.Filter-Name {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Input-Name {
+  width: 150px;
+  height: 50%;
+  margin-top: 1%;
+  margin-right: 0.3%;
+  margin-left: 1%;
+  border-radius: 6px;
+  border: 1px solid #ffffff3b;
+  cursor: pointer;
+  font-size: 0.8em;
+}
