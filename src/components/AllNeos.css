@@ -1,7 +1,7 @@
 .AllNeos {
   display: flex;
   flex-flow: row wrap;
-  margin-top: 5em;
+  margin-top: 3em;
   justify-content: center;
   justify-content: space-evenly;
 }
