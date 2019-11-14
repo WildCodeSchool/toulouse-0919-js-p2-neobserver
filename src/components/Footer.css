@@ -24,18 +24,18 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 280px;
+  height: 10vw;
   background-color: #252525;
 }
 
 .logo-nasa,
 .logo-git {
-  height: 5em;
+  height: 4em;
 }
 
 .logo-wild {
-  width: 7em;
-  height: 2.6em;
+  width: 6em;
+  height: 2.4em;
 }
 
 .logos_footer {
@@ -49,8 +49,8 @@ ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 160px;
-  width: 40%;
+  height: 6.2em;
+  width: 32%;
   background-color: #3b3b3b;
 }
 
