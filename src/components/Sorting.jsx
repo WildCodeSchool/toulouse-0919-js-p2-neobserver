@@ -43,7 +43,7 @@ const Sorting = ({
         </button>
       </div>
       <div className="AllNeos">
-        {foundSmalls ? foundSmalls.map(small => <DisplayCardNeo infoNeo={small} />) : null}
+        {foundSmalls && foundSmalls.map(small => <DisplayCardNeo infoNeo={small} />)}
         {foundMediums && foundMediums.map(medium => <DisplayCardNeo infoNeo={medium} />)}
         {foundBigs && foundBigs.map(big => <DisplayCardNeo infoNeo={big} />)}
         {foundDangerous && foundDangerous.map(dangerous => <DisplayCardNeo infoNeo={dangerous} />)}

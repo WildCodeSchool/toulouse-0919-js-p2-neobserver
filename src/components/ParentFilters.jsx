@@ -148,14 +148,14 @@ class ParentFilters extends Component {
 
   render() {
     return (
-      <div className="AllFilter">
+      <div className={this.state.arrayResults ? "AllFilter" : "EmptySearch"}>
         <div className="DateNameFilter">
           <Datepicker
             className="DateFilter"
             handlerCreateArrayDate={this.createArrayDate}
             arrayDate={this.state.arrayDate}
             getNeos={this.getNeosByWeek}
-          />
+            />
           <NameFilter
             className="NameFilter"
             handleNeoByName={this.handleNeoByName}
@@ -163,7 +163,7 @@ class ParentFilters extends Component {
             findNeoByName={this.findNeoByName}
             searchedInputName={this.state.searchedName}
             foundNeo={this.state.foundNeo}
-          />
+            />
         </div>
         <Sorting
           className="SmallFilter"
@@ -178,8 +178,10 @@ class ParentFilters extends Component {
           foundDangerous={this.state.foundDangerous}
           getSafeNeos={this.getSafeNeos}
           foundSafe={this.state.foundSafe}
-        />
+          arrayResults={this.state.arrayResults}
+          />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
+        {this.state.arrayResults ? null : <p style={{ textAlign: 'center', color: 'white', marginTop: '10%' }}>Results will appear here</p>}
       </div>
     );
   }
