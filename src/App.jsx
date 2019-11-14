@@ -12,12 +12,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/AllNeos" component={ParentFilters} />
-          <Route path="/AllNews" component={AllNews} />
-          <Route path="/Glossary" component={Glossary} />
+          <Route exact path="/">
+            <div style={{ backgroundColor: 'black' }}>
+              <Nav />
+            </div>
+            <Home />
+          </Route>
+          <Route path="/AllNeos">
+            <Nav />
+            <ParentFilters />
+          </Route>
+          <Route path="/AllNews">
+            <Nav />
+            <AllNews />
+          </Route>
+          <Route path="/Glossary">
+            <Nav />
+            <Glossary />
+          </Route>
         </Switch>
         <Footer />
       </div>

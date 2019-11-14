@@ -5,7 +5,6 @@
 
 .nav {
   width: 100%;
-  background: rgba(0, 0, 0, 0), 35);
 }
 
 .NavBar {
@@ -15,19 +14,39 @@
 
 .Logo {
   float: left;
+  margin-left: 10px;
+  transition: 1s
+}
+
+.Logo:hover {
+  transform: scale(0.9) rotate(12deg);
 }
 
 .NavLinkText {
-  list-style: none;
-  color: white;
-  background-color: #4b4b4b;
-  border-radius: 10px;
-  padding: 5px;
-  text-decoration: none;
-  margin-right: 20px;
-  height: 15px;
-  width: 70px;
+  font-family: 'lato', sans-serif;
+  font-variant: small-caps;
+
+  padding: 0.4em;
+  font-size: 0.9em;
+  margin-right: 1em;
   text-align: center;
+  font-weight: 300;
+  letter-spacing: 3px;
+  border-radius: 6px;
+
+  color: white;
+  background-color: rgba(255, 255, 255, 0.075);
+  border:1px solid #ffffff3b;
+
+  cursor:pointer;
+  text-decoration:none;
+  list-style: none;
+  transition: 1.4s
+}
+
+.NavLinkText:hover {
+  background-color: rgba(209, 212, 255, 0.151);
+  transform: scale(0.98);
 }
 
 .NavButtons {
