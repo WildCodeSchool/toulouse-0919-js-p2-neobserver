@@ -170,16 +170,14 @@ class ParentFilters extends Component {
             getNeos={this.getNeosByWeek}
             clearSearch={this.clearSearch}
           />
-          <NameFilter
-            className="NameFilter"
-            handleNeoByName={this.handleNeoByName}
-            handleSearchByName={this.handleSearchByName}
-            findNeoByName={this.findNeoByName}
-            searchedInputName={this.state.searchedName}
-            foundNeo={this.state.foundNeo}
-          />
         </div>
         <Sorting
+          className="NameFilter"
+          handleNeoByName={this.handleNeoByName}
+          handleSearchByName={this.handleSearchByName}
+          findNeoByName={this.findNeoByName}
+          searchedInputName={this.state.searchedName}
+          foundNeo={this.state.foundNeo}
           className="SmallFilter"
           getSmallNeos={this.getSmallNeos}
           foundSmalls={this.state.foundSmalls}
