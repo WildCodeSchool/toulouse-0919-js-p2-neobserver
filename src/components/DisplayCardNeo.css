@@ -23,13 +23,15 @@
   width: 500px;
   border-radius: 10px;
   margin-left: 2%;
-  margin-bottom: 1.5em;
-  transition: 1.4s;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  border: 1.2px solid #0011ff8a;
 }
 
 .DisplayCardNeoOTD:hover {
-  background-color: #414141;
+  background-color: #575757;
   color: white;
+  transform: scale(1.01);
 }
 
 .card_texts {
@@ -59,7 +61,7 @@
 }
 
 .JPLlink {
-  margin-bottom: 0.8em;
+  margin-top: 0;
   align-self: center;
   color: #7c97db;
   width: 12em;

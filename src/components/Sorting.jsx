@@ -16,11 +16,16 @@ const Sorting = ({
   foundDangerous,
   getDangerousNeos,
   getSafeNeos,
-  foundSafe
+  foundSafe,
+  handleNeoByName,
+  findNeoByName,
+  searchedInputName,
+  foundNeo
 }) => {
   return (
     <div className="Btn-Sorting">
       <div className="All-btn">
+        <div className="BigDivFilterName"></div>
         <label htmlFor="small"></label>
         <button className="Btn-Small" onClick={getSmallNeos}>
           Small
@@ -41,8 +46,22 @@ const Sorting = ({
         <button className="Btn-Safe" onClick={getSafeNeos}>
           Safe
         </button>
+        <div className="Filter-Name">
+          <label htmlFor="name" />
+          <input
+            className="Input-Name"
+            onChange={event => handleNeoByName(event)}
+            id="searchName"
+            type="text"
+            value={searchedInputName}
+          />
+          <button className="Btn-Name" onClick={() => findNeoByName(searchedInputName)}>
+            Search by Name
+          </button>
+        </div>
       </div>
       <div className="AllNeos">
+        {foundNeo && <DisplayCardNeo className="ResultNameFilter" infoNeo={foundNeo} />}
         {foundSmalls && foundSmalls.map(small => <DisplayCardNeo infoNeo={small} />)}
         {foundMediums && foundMediums.map(medium => <DisplayCardNeo infoNeo={medium} />)}
         {foundBigs && foundBigs.map(big => <DisplayCardNeo infoNeo={big} />)}

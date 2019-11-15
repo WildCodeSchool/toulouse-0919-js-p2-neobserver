@@ -3,6 +3,27 @@
   justify-content: center;
 }
 
+.Tittle-filter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  font-family: 'lato', sans-serif;
+  font-weight: 1;
+  font-size: 20px;
+  letter-spacing: 2px;
+  align-self: center;
+  text-shadow: 4.5px 7px 6px rgb(0, 0, 0);
+  padding-left: 15%;
+}
+
+.GrosseDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 25%;
+}
 
 .Btn-Small,
 .Btn-Medium,
@@ -15,7 +36,7 @@
   font-weight: 200;
   letter-spacing: 3px;
   background-color: rgba(255, 255, 255, 0.075);
-  border:1px solid #ffffff3b;
+  border: 1px solid #ffffff3b;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.8em;
@@ -46,7 +67,7 @@
   padding: 0.3em 2em 0.3em 2em;
   text-decoration: none;
   align-self: center;
-  justify-self: flex-end;
+  /* justify-self: flex-end; */
   transition: 0.6s;
 }
 
@@ -73,8 +94,11 @@
 .Btn-Dangerous:hover,
 .Btn-Safe:hover,
 .Btn-Name:hover,
-.CalendarBtn:hover {
-  background-color: rgba(209, 212, 255, 0.151);
+.CalendarBtn:hover,
+.clearSearch:hover {
+  background-color: rgba(72, 75, 116, 0.336);
+  color: #fdfdff;
+  transition: 0.2s;
 }
 .CalendarBtn {
   margin-left: 2em;
@@ -86,7 +110,7 @@
 
 .Filter-Name {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .Input-Name {
   width: 150px;
@@ -103,8 +127,9 @@
 
 .CalendarGlobal {
   display: flex;
-  justify-content: flex-start;
+  align-self: flex-end;
   margin-top: 1.5em;
+  margin-left: 27%;
 }
 
 .CalendarStart,
@@ -135,12 +160,19 @@
 
 .DateNameFilter {
   display: flex;
-  align-items: baseline;
-  align-items: flex-end;
-  justify-content: space-between;
+  /* align-items: baseline; */
+  align-items: center;
+  /* justify-content: space-between; */
   margin-bottom: 3em;
+  border-top: 2px solid #ffffff3b;
+  border-right: 2px solid #ffffff3b;
+  border-left: 2px solid #ffffff3b;
 }
 
 .EmptySearch {
   height: 38vw;
+}
+
+.ResultNameFilter {
+  border: solid red 2px;
 }
