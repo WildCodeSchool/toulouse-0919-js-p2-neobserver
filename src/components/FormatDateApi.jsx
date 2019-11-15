@@ -36,10 +36,13 @@ class FormatDateApi extends React.Component {
     const dates = generateDate();
     const linksResult = generateLinkArray(dates);
     return (
-      <div className="FormatDateApi">
-        {linksResult.map(link => (
-          <News link={link} />
-        ))}
+      <div>
+          <h1 className="h1NewsFromSpace">News From Space</h1>
+        <div className="FormatDateApi">
+          {linksResult.map(link => (
+            <News link={link} />
+          ))}
+        </div>
       </div>
     );
   }

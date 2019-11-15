@@ -9,6 +9,17 @@ p {
     margin: 0.8em;
 }
 
+.h1NewsFromSpace {
+    font-size: 60px;
+    color: white;
+    font-family: 'lato', sans-serif;
+    text-align: center;
+    padding: 100px 0 100px 0;
+    font-weight: 200;
+    letter-spacing: 10px;
+    text-shadow: 4.5px 7px 6px rgb(0, 0, 0);
+}
+
 .AllNews {
     background: rgb(46, 45, 47);
     background: linear-gradient(90deg, rgba(46, 45, 47, 1) 0%, rgba(15, 14, 14, 1) 19%, rgba(6, 6, 6, 1) 100%);

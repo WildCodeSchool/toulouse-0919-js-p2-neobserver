@@ -195,7 +195,7 @@ class ParentFilters extends Component {
         />
         <div>{this.state.arrayResults && <ListNeo arrayResults={this.state.arrayResults} />}</div>
         {this.state.arrayResults ? null : (
-          <p style={{ textAlign: 'center', color: 'grey', marginTop: '10%' }}>
+          <p style={{ textAlign: 'center', color: 'grey', marginTop: '7%' }}>
             Results will appear here
           </p>
         )}

@@ -7,9 +7,9 @@ const Datepicker = ({ handlerCreateArrayDate, arrayDate, getNeos, arrayResults, 
     <div className="GrosseDiv">
       <div className="Tittle-filter">
         <br />
-        <h2>Discover Space and Neos :</h2>
+        <h2 className="h2DiscoverSpaceAndNeos">Discover Space and Neos</h2>
         <br />
-        <h4>First step: select a week</h4>
+        <h4 className="firstStep">First step: select a week</h4>
         <br />
       </div>
       <div className="CalendarGlobal">
