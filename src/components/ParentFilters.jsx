@@ -155,7 +155,8 @@ class ParentFilters extends Component {
       foundMediums: null,
       foundBigs: null,
       foundSafe: null,
-      foundDangerous: null
+      foundDangerous: null,
+      searchedName: null
     });
   }
 
