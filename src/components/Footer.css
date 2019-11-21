@@ -1,80 +1,78 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 .gitlinks_footer {
-  color: white;
-  font-size: 12px;
-  padding: 0.2em;
-  text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 0.2em;
+    text-align: center;
 }
 
 .gitlink_footer a {
-  text-decoration: none;
-  color: #7c97db;
-  font-size: 14px;
+    text-decoration: none;
+    color: #7c97db;
+    font-size: 14px;
 }
 
 .container_footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 280px;
+  height: 10vw;
   background-color: #252525;
 }
 
 .logo-nasa,
 .logo-git {
-  height: 5em;
+  height: 4em;
 }
 
 .logo-wild {
-  width: 7em;
-  height: 2.6em;
+  width: 6em;
+  height: 2.4em;
 }
 
 .logos_footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 45%;
 }
 
 .directors {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 160px;
-  width: 40%;
+  height: 6.2em;
+  width: 32%;
   background-color: #3b3b3b;
 }
 
+
 @media screen and (max-width: 600px) {
-  .gitlinks_footer li {
-    font-size: 14px;
-  }
-
-  .container_footer {
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 320px;
-  }
-
-  .logos_footer {
-    width: 100%;
-  }
-
-  .logo-nasa,
-  .logo-git {
-    height: 4.4em;
-  }
-
-  .directors {
-    width: 80%;
-  }
+    .gitlinks_footer li {
+        font-size: 14px;
+    }
+    .container_footer {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 320px;
+        margin-top: 50px;
+    }
+    .logos_footer {
+        width: 100%;
+    }
+    .logo-nasa,
+    .logo-git {
+        height: 4.4em;
+    }
+    .directors {
+        width: 80%;
+    }
 }

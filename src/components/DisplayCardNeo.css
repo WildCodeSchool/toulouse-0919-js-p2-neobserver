@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'lato', sans-serif;
 }
 
 .card_units,
@@ -21,14 +22,23 @@
   height: 280px;
   width: 500px;
   border-radius: 10px;
-  margin-left: 10px;
+  margin-left: 2%;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  border: 1.2px solid #0011ff8a;
+}
+
+.DisplayCardNeoOTD:hover {
+  background-color: #575757;
+  color: white;
+  transform: scale(1.01);
 }
 
 .card_texts {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10em;
+  height: 11em;
 }
 
 .card_fetch_results {

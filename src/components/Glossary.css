@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.containerGlossary{
+  display: flex;
+  flex-direction: column;
+  background: rgb(55,55,55);
+  background: radial-gradient(circle, rgba(55,55,55,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.GlossaryTitle {
+  font-size: 60px;
+  color: white;
+  font-family: 'lato', sans-serif;
+  text-align: center;
+  padding: 100px 0 100px 0;
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-shadow: 4.5px 7px 6px rgb(0, 0, 0);
+}
+
+.wrapperDefinition {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5em;
+  align-items: center;
+}
+
+.containerPDefinition {
+  width: 50vw;
+  margin: 1em;
+  background-color: #1a1a1a;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: 1s;
+}
+
+.containerPDefinition:hover {
+  background-color: #292929;
+}
+
+.TitleBg {
+  background-color: #2b2b2b;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.h3Glossary {
+  font-family: 'lato', sans-serif;
+  text-align: center;
+  color: #7c97db;
+  padding: 10px 0 10px 0;
+  font-weight: 200;
+}
+
+.pDefinitions {
+  color: white;
+  font-family: 'lato', sans-serif;
+  text-align: justify;
+  padding: 1em;
+  font-size: 17px;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+
+.NEOSGIF {
+  height: 14em;
+  width: 20em;
+}
+
+.Cometpic {
+  height: 14em;
+  width: 20em;
+}
+
+.AsteroidPic {
+  height: 14em;
+  width: 20em;
+}
+
+.meteroidPic {
+  height: 14em;
+  width: 20em;
+}

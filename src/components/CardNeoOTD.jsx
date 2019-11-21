@@ -32,7 +32,7 @@ class CardNeoOTD extends Component {
 
   render() {
     const { neo } = this.state;
-    return <div>{neo ? <DisplayCardNeoOTD neo={neo} /> : null}</div>;
+    return <div className="HomeNewsNEo">{neo ? <DisplayCardNeoOTD neo={neo} /> : null}</div>;
   }
 }
 

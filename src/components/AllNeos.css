@@ -1,0 +1,13 @@
+.AllNeos {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 5em;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: 60px;
+  background-color: black;
+}
+
+.All-btn {
+  position: absolute;
+}
